@@ -1,113 +1,315 @@
-import Image from "next/image";
+'use client';
+
+import Image from 'next/image';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { Poppins, Kanit, Josefin_Sans } from 'next/font/google';
+import { ReactLenis } from '@studio-freight/react-lenis';
+import { InfiniteMovingCards } from '@/components/ui/InfiniteMovingCards';
+import * as copy from '@/utils/copy.json';
+
+const kanitBold = Kanit({ weight: '900', subsets: ['latin'] });
+const poppinsRegular = Poppins({ weight: '400', subsets: ['latin'] });
+const josefinSemiBold = Josefin_Sans({ weight: '600', subsets: ['latin'] });
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
+    <ReactLenis root>
+      <Header />
+      <section className='bg-orange relative min-h-[100vh] flex flex-col items-center pt-28'>
+        <h2
+          className={`text-9xl text-white uppercase text-center tracking-wide text-with-shadow ${kanitBold.className}`}>
+          Love Africa
+        </h2>
+        <h2
+          className={`text-8xl text-white uppercase text-center tracking-wide text-with-shadow ${kanitBold.className}`}>
+          Taste Africa
+        </h2>
+        <p className={`text-xl text-white text-center max-w-[60ch] mx-auto mt-6 mb-10 ${poppinsRegular.className}`}>
+          Discover the vibrant tapestry of flavors woven throughout Africa with our extensive array of handpicked
+          African culinary delights.
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+        <InfiniteMovingCards items={copy.products} />
+      </section>
+      <section className='bg-cream'>
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
+          <path
+            fill='#ff5c35'
+            fill-opacity='1'
+            d='M0,256L120,218.7C240,181,480,107,720,106.7C960,107,1200,181,1320,218.7L1440,256L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z'></path>
+        </svg>
+      </section>
+      <section className='relative bg-cream'>
+        <div className='spacing container xl:w-[80%] mx-auto'>
+          <div className='flex flex-col items-center mb-8 xl:mb-12'>
+            <h2
+              className={`text-3xl md:text-4xl xl:text-5xl text-black-muted text-center mb-4 ${josefinSemiBold.className}`}>
+              Discover Authentic African Flavors
+            </h2>
+            <p
+              className={`text-base md:text-lg text-black-muted leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${poppinsRegular.className}`}>
+              Delve into the heart of African culinary heritage with our platform, offering unparalleled access to an
+              extensive selection of authentic food products sourced directly from the continent.
+            </p>
+          </div>
+          <div className='grid grid-cols-2 gap-4 lg:gap-10'>
+            <div className='col-span-2 lg:col-span-1'>
+              <Image
+                src='/images/spices.jpg'
+                alt='Spices from Africa'
+                width={640}
+                height={800}
+                className='w-full h-auto aspect-square object-cover rounded shadow'
+              />
+            </div>
+            <div className='col-span-2 lg:col-span-1 flex flex-col justify-center lg:-px-6'>
+              <h3
+                className={`text-2xl xl:text-3xl text-black-muted text-center lg:text-left leading-normal mb-4 ${josefinSemiBold.className}`}>
+                African Delights
+              </h3>
+              <ul className='ml-4 list-disc'>
+                <li
+                  className={`text-sm md:text-base text-black-muted leading-relaxed mb-4 xl:max-w-[60ch] ${poppinsRegular.className}`}>
+                  KEWVE platform offers wholesalers like yourself access to a wide range of authentic African food
+                  products directly from the source.
+                </li>
+                <li
+                  className={`text-sm md:text-base text-black-muted leading-relaxed xl:max-w-[60ch] ${poppinsRegular.className}`}>
+                  Say goodbye to middlemen and enjoy a diverse selection of African food. Bid farewell to unnecessary
+                  intermediaries, and embrace a direct connection with trusted suppliers. We make sourcing African food
+                  and drink brands as easy as it should be.
+                </li>
+              </ul>
+              <div className='flex justify-center lg:justify-start gap-4 mt-6 lg:mt-10'>
+                <button
+                  className={`bg-orange rounded-full py-3 px-6 text-base text-white ${josefinSemiBold.className}`}>
+                  Become a Buyer
+                </button>
+                <button className={`bg-pink rounded-full py-3 px-6 text-base text-white ${josefinSemiBold.className}`}>
+                  Become a Supplier
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      </section>
+      <section className='bg-orange'>
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
+          <path
+            fill='#fafaf0'
+            fill-opacity='1'
+            d='M0,256L120,218.7C240,181,480,107,720,106.7C960,107,1200,181,1320,218.7L1440,256L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z'></path>
+        </svg>
+      </section>
+      <section className='relative bg-orange'>
+        <div className='spacing container xl:w-[80%] mx-auto'>
+          <div className='flex flex-col items-center mb-8 lg:mb-12'>
+            <h2 className={`text-3xl md:text-4xl xl:text-5xl text-white text-center mb-4 ${josefinSemiBold.className}`}>
+              Simplify Your Sourcing Process
+            </h2>
+            <p
+              className={`text-base lg:text-lg text-white leading-normal max-w-full lg:max-w-[65ch] mx-auto text-center ${poppinsRegular.className}`}>
+              Revolutionize your procurement journey with KEWVE&apos;s seamless solution. Unlock direct access to
+              top-quality African brands, streamlining your sourcing needs effortlessly. Experience efficiency and
+              reliability like never before.
+            </p>
+          </div>
+          <div className='grid grid-cols-3 gap-4'>
+            <div className='col-span-3 lg:col-span-1 p-8 bg-yellow rounded shadow-md text-center'>
+              <Image
+                src='/images/save_time.svg'
+                alt='Save Time'
+                width={64}
+                height={64}
+                className='mx-auto mb-4 xl:mb-6'
+              />
+              <h3 className={`text-xl text-black-muted leading-tight mb-4 ${josefinSemiBold.className}`}>
+                Effortless Procurement
+              </h3>
+              <p className={`text-sm text-black-muted leading-relaxed ${poppinsRegular.className}`}>
+                Save time using KEWVE. Easily source from trusted African brands, streamlining your procurement journey
+                for enhanced efficiency and a seamless experience
+              </p>
+            </div>
+            <div className='col-span-3 lg:col-span-1 p-8 bg-yellow rounded shadow-md text-center'>
+              <Image
+                src='/images/sourcing.svg'
+                alt='Save Time'
+                width={64}
+                height={64}
+                className='mx-auto mb-4 xl:mb-6'
+              />
+              <h3 className={`text-xl text-black-muted leading-tight mb-4 ${josefinSemiBold.className}`}>
+                Effortless Sourcing
+              </h3>
+              <p className={`text-sm text-black-muted leading-relaxed ${poppinsRegular.className}`}>
+                We streamline sourcing for UK and European food retailers and wholesalers, ensuring efficiency and
+                convenience in the procurement process for a seamless experience.
+              </p>
+            </div>
+            <div className='col-span-3 lg:col-span-1 p-8 bg-yellow rounded shadow-md text-center'>
+              <Image
+                src='/images/platform.svg'
+                alt='Save Time'
+                width={64}
+                height={64}
+                className='mx-auto mb-4 xl:mb-6'
+              />
+              <h3 className={`text-xl text-black-muted leading-tight mb-4 ${josefinSemiBold.className}`}>
+                Seamless Access
+              </h3>
+              <p className={`text-sm text-black-muted leading-relaxed ${poppinsRegular.className}`}>
+                Instead of spending time and effort searching for reliable suppliers, our platform connects you with
+                trusted African food brands, ensuring a smooth sourcing experience
+              </p>
+            </div>
+          </div>
+          <div className='flex justify-center gap-4 mt-6 lg:mt-10 xl:mt-14'>
+            <button
+              className={`bg-white rounded-full py-3 px-6 border-2 border-white text-base text-black-muted ${josefinSemiBold.className}`}>
+              Become a Buyer
+            </button>
+            <button
+              className={`bg-transparent border-2 border-white rounded-full py-3 px-6 text-base text-white ${josefinSemiBold.className}`}>
+              Become a Supplier
+            </button>
+          </div>
+        </div>
+      </section>
+      <section className='bg-yellow'>
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
+          <path
+            fill='#ff5c35'
+            fill-opacity='1'
+            d='M0,256L120,218.7C240,181,480,107,720,106.7C960,107,1200,181,1320,218.7L1440,256L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z'></path>
+        </svg>
+      </section>
+      <section className='relative bg-yellow'>
+        <div className='spacing container xl:w-[80%] mx-auto'>
+          <div className='flex flex-col items-center mb-8 xl:mb-12'>
+            <h2
+              className={`text-3xl md:text-4xl xl:text-5xl text-black-muted text-center mb-4 ${josefinSemiBold.className}`}>
+              Build Your World Food Category
+            </h2>
+            <p
+              className={`text-base md:text-lg text-black-muted leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${poppinsRegular.className}`}>
+              Unlock new opportunities with KEWVE&apos;s comprehensive solutions, broadening your market reach and
+              enhancing your offerings.
+            </p>
+          </div>
+          <div className='grid grid-cols-2 gap-4 lg:gap-10'>
+            <div className='col-span-2 lg:col-span-1 flex flex-col justify-center lg:-px-6 order-2 lg:order-1'>
+              <h3
+                className={`text-2xl xl:text-3xl text-black-muted text-center lg:text-left leading-normal mb-4 ${josefinSemiBold.className}`}>
+                Global Expansion
+              </h3>
+              <ul className='ml-4 list-disc'>
+                <li
+                  className={`text-sm md:text-base text-black-muted leading-relaxed mb-4 xl:max-w-[60ch] ${poppinsRegular.className}`}>
+                  Globalize your offerings with KEWVE, diversify your offerings and cater to the growing demand for
+                  unique and authentic flavours.
+                </li>
+                <li
+                  className={`text-sm md:text-base text-black-muted leading-relaxed xl:max-w-[60ch] ${poppinsRegular.className}`}>
+                  Access exclusive African food products offerings, market insights, supplier connections, and
+                  streamlined procurement to broaden your global food category.
+                </li>
+              </ul>
+              <div className='flex justify-center lg:justify-start gap-4 mt-6 lg:mt-10'>
+                <button
+                  className={`bg-orange rounded-full py-3 px-6 text-base text-white ${josefinSemiBold.className}`}>
+                  Become a Buyer
+                </button>
+                <button className={`bg-pink rounded-full py-3 px-6 text-base text-white ${josefinSemiBold.className}`}>
+                  Become a Supplier
+                </button>
+              </div>
+            </div>
+            <div className='col-span-2 lg:col-span-1 order-1 lg:order-2'>
+              <Image
+                src='/images/world_food.jpg'
+                alt='Spices from Africa'
+                width={640}
+                height={800}
+                className='w-full h-auto aspect-square object-cover rounded shadow'
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className='bg-cream'>
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
+          <path
+            fill='#fecd88'
+            fill-opacity='1'
+            d='M0,256L120,218.7C240,181,480,107,720,106.7C960,107,1200,181,1320,218.7L1440,256L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z'></path>
+        </svg>
+      </section>
+      <section className='relative bg-cream'>
+        <div className='spacing container xl:w-[80%] mx-auto'>
+          <div className='flex flex-col items-center mb-8 xl:mb-12'>
+            <h2
+              className={`text-3xl md:text-4xl xl:text-5xl text-black-muted text-center mb-4 ${josefinSemiBold.className}`}>
+              Increase Your Sales
+            </h2>
+            <p
+              className={`text-base md:text-lg text-black-muted leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${poppinsRegular.className}`}>
+              Explore a lucrative market expansion strategy with KEWVE&apos;s unique African product integration,
+              connecting wholesalers to global buyers for increased sales and market reach.
+            </p>
+          </div>
+          <div className='grid grid-cols-2 gap-4 lg:gap-10'>
+            <div className='col-span-2 lg:col-span-1'>
+              <Image
+                src='/images/sales.jpg'
+                alt='Increase your Sales'
+                width={640}
+                height={800}
+                className='w-full h-auto aspect-square object-cover rounded shadow'
+              />
+            </div>
+            <div className='col-span-2 lg:col-span-1 flex flex-col justify-center lg:-px-6'>
+              <h3
+                className={`text-2xl xl:text-3xl text-black-muted text-center lg:text-left leading-normal mb-4 ${josefinSemiBold.className}`}>
+                Sales Growth
+              </h3>
+              <ul className='ml-4 list-disc'>
+                <li
+                  className={`text-sm md:text-base text-black-muted leading-relaxed mb-4 xl:max-w-[60ch] ${poppinsRegular.className}`}>
+                  Take a bite of a $3.2 billion market by integrating distinctive African products to your world food
+                  category.
+                </li>
+                <li
+                  className={`text-sm md:text-base text-black-muted leading-relaxed xl:max-w-[60ch] ${poppinsRegular.className}`}>
+                  Integrate distinctive African food products to broaden market reach globally. KEWVE connects UK
+                  wholesalers with international buyers, unlocking opportunities for expansion and increased global
+                  sales.
+                </li>
+              </ul>
+              <div className='flex justify-center lg:justify-start gap-4 mt-6 lg:mt-10'>
+                <button
+                  className={`bg-orange rounded-full py-3 px-6 text-base text-white ${josefinSemiBold.className}`}>
+                  Become a Buyer
+                </button>
+                <button className={`bg-pink rounded-full py-3 px-6 text-base text-white ${josefinSemiBold.className}`}>
+                  Become a Supplier
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className='bg-orange'>
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 200'>
+          <path
+            fill='#fafaf0'
+            fill-opacity='1'
+            d='M0,256L120,218.7C240,181,480,107,720,106.7C960,107,1200,181,1320,218.7L1440,256L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z'></path>
+        </svg>
+      </section>
+      <section className='bg-orange relative pb-10'>
+        <Footer />
+      </section>
+    </ReactLenis>
   );
 }
