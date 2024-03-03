@@ -9,7 +9,7 @@ function Header() {
   const headerLinkClassName = `text-base text-white uppercase ${josefin.className}`;
 
   return (
-    <header className='flex justify-center items-center bg-orange py-3 px-4 gap-24 z-50'>
+    <header className='flex justify-center items-center bg-orange py-4 px-4 gap-24 z-50'>
       <Link prefetch href='/' className={headerLinkClassName}>
         Home
       </Link>

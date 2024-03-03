@@ -1,20 +1,25 @@
-'use client';
-
 import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { createClient } from '@/prismicio';
+import * as prismic from '@prismicio/client';
 import { Poppins, Kanit, Josefin_Sans } from 'next/font/google';
-import { ReactLenis } from '@studio-freight/react-lenis';
 import { InfiniteMovingCards } from '@/components/ui/InfiniteMovingCards';
-import * as copy from '@/utils/copy.json';
 
 const kanitBold = Kanit({ weight: '900', subsets: ['latin'] });
 const poppinsRegular = Poppins({ weight: '400', subsets: ['latin'] });
 const josefinSemiBold = Josefin_Sans({ weight: '600', subsets: ['latin'] });
 
-export default function Home() {
+export default async function Home() {
+  const client = createClient();
+
+  const products = await client.getAllByType('product', {
+    filters: [prismic.filter.at('my.product.featured', true)],
+    limit: 10,
+  });
+
   return (
-    <ReactLenis root>
+    <>
       <Header />
       <section className='bg-orange relative min-h-[100vh] flex flex-col items-center pt-28'>
         <h2
@@ -29,7 +34,7 @@ export default function Home() {
           Discover the vibrant tapestry of flavors woven throughout Africa with our extensive array of handpicked
           African culinary delights.
         </p>
-        <InfiniteMovingCards items={copy.products} />
+        <InfiniteMovingCards items={products} />
       </section>
       <section className='bg-cream'>
         <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
@@ -310,6 +315,6 @@ export default function Home() {
       <section className='bg-orange relative pb-10'>
         <Footer />
       </section>
-    </ReactLenis>
+    </>
   );
 }
