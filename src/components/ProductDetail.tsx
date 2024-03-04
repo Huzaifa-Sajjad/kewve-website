@@ -22,8 +22,8 @@ function ProductDetail({ id, product, products }: ProductDetailProps) {
     <>
       <section className='relative bg-cream pt-10 lg:pt-20'>
         <h2
-          className={`huge-bg-text text-[130px] md:text-[250px] lg:text-[360px] xl:text-[500px] text-uppercase tracking-widest text-orange opacity-20 text-with-shadow ${marker.className}`}>
-          KEWA
+          className={`huge-bg-text huge-bg-text text-[100px] md:text-[180px] lg:text-[250px] xl:text-[400px] text-uppercase tracking-widest text-orange opacity-20 text-with-shadow ${marker.className}`}>
+          KEWVE
         </h2>
         <div className='relative spacing container mx-auto flex flex-col justify-center items-center z-10'>
           <motion.h1
