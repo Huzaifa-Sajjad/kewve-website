@@ -11,8 +11,9 @@
   --black-muted: #3d3935;
 }
 
+html,
 body {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 .text-with-shadow {

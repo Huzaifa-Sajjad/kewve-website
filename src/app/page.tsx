@@ -18,7 +18,7 @@ export default async function Home() {
   });
 
   return (
-    <>
+    <div className='overflow-x-hidden'>
       <Header />
       <HeroSection items={products} />
       <section className='bg-cream'>
@@ -68,6 +68,6 @@ export default async function Home() {
       <section className='bg-orange relative pb-10'>
         <Footer />
       </section>
-    </>
+    </div>
   );
 }

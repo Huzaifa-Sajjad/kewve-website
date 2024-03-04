@@ -11,7 +11,7 @@ interface HeroSectionProps {
 
 function HeroSection({ items }: HeroSectionProps) {
   return (
-    <section className='bg-orange relative min-h-[100vh] flex flex-col items-center pt-28'>
+    <section className='bg-orange relative min-h-[100vh] flex flex-col items-center pt-28 overflow-x-hidden'>
       <h2
         className={`huge-bg-text huge-bg-text-top text-[100px] md:text-[180px] lg:text-[250px] xl:text-[400px] text-uppercase tracking-widest text-white opacity-10 text-with-shadow ${marker.className}`}>
         KEWVE
