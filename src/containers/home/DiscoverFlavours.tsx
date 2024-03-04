@@ -84,14 +84,18 @@ function DiscoverFlavours() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           className='flex flex-wrap justify-center gap-4 mt-8 lg:mt-14'>
-          <button
-            className={`w-full md:w-fit bg-orange rounded-full py-3 px-6 lg:py-4 lg:px-8  text-base lg:text-lg shadow-md text-white ${josefinSemiBold.className}`}>
+          <a
+            href='https://5y1f9ke4k38.typeform.com/to/x2Ut65IL'
+            target='_blank'
+            className={`w-full md:w-fit bg-orange rounded-full py-3 px-6 lg:py-4 lg:px-8  text-base lg:text-lg shadow-md text-white text-center ${josefinSemiBold.className}`}>
             Become a Buyer
-          </button>
-          <button
-            className={`w-full md:w-fit bg-pink rounded-full py-3 px-6 lg:py-4 lg:px-8  text-base lg:text-lg shadow-md text-white ${josefinSemiBold.className}`}>
+          </a>
+          <a
+            href='https://5y1f9ke4k38.typeform.com/to/lEkbdbRx'
+            target='_blank'
+            className={`w-full md:w-fit bg-pink rounded-full py-3 px-6 lg:py-4 lg:px-8  text-base lg:text-lg shadow-md text-white text-center ${josefinSemiBold.className}`}>
             Become a Supplier
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>

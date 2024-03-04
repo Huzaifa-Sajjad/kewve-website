@@ -28,6 +28,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 
 .huge-bg-text-top {
@@ -41,7 +42,7 @@ body {
     url('../assets/pattern.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top right;
+  background-position: center;
 }
 
 .bg-pink-pattern {
@@ -49,5 +50,45 @@ body {
     url('../assets/pattern.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top right;
+  background-position: center;
+}
+
+.bg-orange-pattern {
+  background: linear-gradient(to bottom, rgba(255, 92, 53, 0.95), rgba(255, 92, 53, 0.95)), url('../assets/pattern.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.terms {
+  color: var(--black-muted);
+
+  p {
+    font-size: 16px;
+    margin-bottom: 16px;
+    color: var(--black-muted);
+  }
+
+  h2 {
+    font-size: 22px;
+    margin: 16px 0;
+    color: #000;
+  }
+
+  h3 {
+    font-size: 18px;
+    margin: 8px 0;
+    color: #000;
+  }
+
+  ol {
+    margin-left: 20px;
+    padding-left: 20px;
+    list-style: decimal;
+    li {
+      margin-bottom: 8px;
+      font-size: 16px;
+      color: var(--black-muted);
+    }
+  }
 }

@@ -16,10 +16,10 @@ function Footer() {
           <Link href='/terms' className={footerLinkClassName}>
             Terms & Conditions
           </Link>
-          <Link href='/terms' className={footerLinkClassName}>
+          <Link href='/privacy' className={footerLinkClassName}>
             Privacy Policy
           </Link>
-          <Link href='/terms' className={footerLinkClassName}>
+          <Link href='/marketplace-terms' className={footerLinkClassName}>
             Marketplace Term & Conditions
           </Link>
         </div>

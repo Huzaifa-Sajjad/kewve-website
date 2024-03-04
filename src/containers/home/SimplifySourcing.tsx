@@ -85,14 +85,18 @@ function SimplifySourcing() {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ delay: 1 }}
           className='flex flex-wrap justify-center gap-4 mt-8 lg:mt-14'>
-          <button
-            className={`w-full md:w-fit bg-white border-2 border-white rounded-full py-3 px-6 lg:py-4 lg:px-8  text-base lg:text-lg  text-black-muted hover:opacity-85 transition-all ${josefinSemiBold.className}`}>
+          <a
+            href='https://5y1f9ke4k38.typeform.com/to/x2Ut65IL'
+            target='_blank'
+            className={`w-full md:w-fit bg-white border-2 border-white rounded-full py-3 px-6 lg:py-4 lg:px-8  text-base lg:text-lg  text-black-muted hover:opacity-85 transition-all text-center ${josefinSemiBold.className}`}>
             Become a Buyer
-          </button>
-          <button
-            className={`w-full md:w-fit bg-transparent border-2 border-white rounded-full py-3 px-6 lg:py-4 lg:px-8  text-base lg:text-lg text-white hover:opacity-85 transition-all ${josefinSemiBold.className}`}>
+          </a>
+          <a
+            href='https://5y1f9ke4k38.typeform.com/to/lEkbdbRx'
+            target='_blank'
+            className={`w-full md:w-fit bg-transparent border-2 border-white rounded-full py-3 px-6 lg:py-4 lg:px-8  text-base lg:text-lg text-white hover:opacity-85 transition-all text-center ${josefinSemiBold.className}`}>
             Become a Supplier
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>
