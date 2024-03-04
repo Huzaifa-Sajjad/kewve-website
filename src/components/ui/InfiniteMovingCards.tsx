@@ -2,11 +2,10 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { useEffect, useState, useRef } from 'react';
-import { cn, formatCurrency, getRandomColor } from '@/utils';
-import { Josefin_Sans } from 'next/font/google';
+import { cn, formatCurrency, getRandomColor, josefinSemiBold } from '@/utils';
 import type { AllDocumentTypes } from '../../../prismicio-types';
-const josefinSemiBold = Josefin_Sans({ weight: '600', subsets: ['latin'] });
 
 interface InfiniteMovingCardsProps {
   items: AllDocumentTypes[];
@@ -68,7 +67,12 @@ export const InfiniteMovingCards = ({
     }
   };
   return (
-    <div ref={containerRef} className={cn('scroller relative z-20 tw-w-full overflow-hidden', className)}>
+    <motion.div
+      ref={containerRef}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.4 }}
+      className={cn('scroller relative z-20 tw-w-full overflow-hidden', className)}>
       <div
         ref={scrollerRef}
         className={cn(
@@ -113,6 +117,6 @@ export const InfiniteMovingCards = ({
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 };

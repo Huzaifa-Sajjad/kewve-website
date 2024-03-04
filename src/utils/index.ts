@@ -1,5 +1,6 @@
 import { cn } from '@/utils/cn';
 import { backgroundColors, getRandomColor } from '@/utils/color';
 import { formatCurrency } from '@/utils/formatCurrency';
+import { marker, kanitBold, josefinSemiBold, poppinsRegular } from '@/utils/fonts';
 
-export { cn, formatCurrency, getRandomColor, backgroundColors };
+export { cn, formatCurrency, getRandomColor, backgroundColors, marker, kanitBold, josefinSemiBold, poppinsRegular };

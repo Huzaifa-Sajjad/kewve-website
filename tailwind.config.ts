@@ -5,6 +5,7 @@ const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/containers/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
@@ -13,7 +14,7 @@ const config: Config = {
       cream: '#fafaf0',
       pink: '#FC8EAC',
       yellow: '#fecd88',
-      brown: '#733D02',
+      brown: '#642821',
       white: '#ffffff',
       black: '#333333',
       'black-muted': '#3d3935',
