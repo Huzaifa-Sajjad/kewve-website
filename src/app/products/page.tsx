@@ -11,6 +11,9 @@ export default async function Products() {
   const client = createClient();
 
   const products = await client.getAllByType('product', {
+    fetchOptions: {
+      next: { revalidate: 60 },
+    },
     orderings: [
       {
         field: 'my.product.published_on',
