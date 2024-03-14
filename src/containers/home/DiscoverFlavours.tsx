@@ -28,7 +28,7 @@ function DiscoverFlavours() {
           </motion.p>
         </div>
         <div className='grid grid-cols-4 gap-4 mb-8 lg:mb-16 xl:mb-24'>
-          <div className='col-span-4 md:col-span-2 xl:col-span-1'>
+          <div className='col-span-2 xl:col-span-1'>
             <motion.img
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -41,11 +41,11 @@ function DiscoverFlavours() {
               className='w-full h-[300px] lg:h-[450px] aspect-square object-cover rounded-2xl'
             />
           </div>
-          <div className='col-span-4 md:col-span-2 xl:col-span-1 md:mt-8'>
+          <div className='col-span-2 xl:col-span-1 mt-8'>
             <motion.img
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true }}
               transition={{ delay: 0.4 }}
               src='/images/products/product-9.jpg'
               alt='Spices from Africa'
@@ -54,11 +54,11 @@ function DiscoverFlavours() {
               className='w-full h-[300px] lg:h-[450px] aspect-square object-cover rounded-2xl'
             />
           </div>
-          <div className='col-span-4 md:col-span-2 xl:col-span-1'>
+          <div className='col-span-2 xl:col-span-1'>
             <motion.img
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true }}
               transition={{ delay: 0.6 }}
               src='/images/products/product-11.png'
               alt='Spices from Africa'
@@ -67,7 +67,7 @@ function DiscoverFlavours() {
               className='w-full h-[300px] lg:h-[450px] aspect-square object-cover rounded-2xl'
             />
           </div>
-          <div className='col-span-4 md:col-span-2 xl:col-span-1 md:mt-8'>
+          <div className='col-span-2 xl:col-span-1 mt-8'>
             <motion.img
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -128,7 +128,7 @@ function DiscoverFlavours() {
             </p>
           </motion.div>
         </div>
-        <div className='flex justify-center mt-6'>
+        <div className='flex justify-center'>
           <CTAButtons />
         </div>
       </div>

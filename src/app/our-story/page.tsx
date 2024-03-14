@@ -34,12 +34,12 @@ function OurStory() {
       <section className='relative bg-pink'>
         <div className='spacing container xl:w-[80%] mx-auto'>
           <div className='grid grid-cols-2 gap-4 items-center'>
-            <div className='col-span-2 lg:col-span-1'>
+            <div className='col-span-2 lg:col-span-1 order-2 lg:order-1'>
               <motion.h2
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
-                className={`text-3xl md:text-4xl xl:text-5xl font-bold text-black mb-4 ${regalDisplay.className}`}>
+                className={`text-3xl md:text-4xl xl:text-5xl font-bold text-black mb-4 text-center lg:text-left ${regalDisplay.className}`}>
                 Our Story
               </motion.h2>
               <motion.p
@@ -47,7 +47,7 @@ function OurStory() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ delay: 0.1 }}
-                className={`text-base md:text-lg text-black leading-normal max-w-full lg:max-w-[45ch] mb-6 ${josefinRegular.className}`}>
+                className={`text-base md:text-lg text-black leading-normal max-w-full lg:max-w-[45ch] mb-6 text-center lg:text-left mx-auto lg:mx-0 ${josefinRegular.className}`}>
                 Our user-friendly platform streamlines the entire process, making it easy for buyers to explore and
                 purchase a rich variety of authentic African food products.
               </motion.p>
@@ -56,15 +56,18 @@ function OurStory() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ delay: 0.1 }}
-                className={`text-base md:text-lg text-black leading-normal max-w-full lg:max-w-[45ch]  ${josefinRegular.className}`}>
+                className={`text-base md:text-lg text-black leading-normal max-w-full lg:max-w-[45ch] text-center lg:text-left mx-auto lg:mx-0 ${josefinRegular.className}`}>
                 Kewve makes it easy for buyers around the world to discover and enjoy African food, bringing a taste of
                 the African to your home.
               </motion.p>
               <CTAButtons />
             </div>
-            <div className='col-span-2 lg:col-span-1 hidden lg:flex justify-end'>
+            <div className='col-span-2 lg:col-span-1 order-1 lg:order-2'>
               <div className='relative'>
                 <motion.img
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true, amount: 1 }}
                   src='/images/products/product-7.webp'
                   alt='Miri Piri'
                   width={600}
@@ -72,8 +75,8 @@ function OurStory() {
                   className='relative w-full h-auto aspect-square rounded-xl shadow-lg z-20'
                 />
                 <motion.img
-                  initial={{ translateX: 0, rotate: 0 }}
-                  whileInView={{ translateX: '56px', rotate: '12deg' }}
+                  initial={{ translateX: 0, rotate: 0, opacity: 0 }}
+                  whileInView={{ translateX: '56px', rotate: '12deg', opacity: 1 }}
                   viewport={{ once: true, amount: 0.8 }}
                   src='/images/products/product-13.jpg'
                   alt='Miri Piri'
@@ -82,8 +85,8 @@ function OurStory() {
                   className='hidden xl:block w-full h-auto aspect-square rounded-xl shadow absolute z-0 top-0'
                 />
                 <motion.img
-                  initial={{ translateX: 0, rotate: 0 }}
-                  whileInView={{ translateX: '-56px', rotate: '-12deg' }}
+                  initial={{ translateX: 0, rotate: 0, opacity: 0 }}
+                  whileInView={{ translateX: '-56px', rotate: '-12deg', opacity: 1 }}
                   viewport={{ once: true, amount: 0.8 }}
                   src='/images/products/product-13.jpg'
                   alt='Miri Piri'

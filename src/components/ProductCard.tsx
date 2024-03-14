@@ -22,7 +22,7 @@ function ProductCard({ id, product }: ProductCardProps) {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: 'easeInOut' }}
-      viewport={{ once: true, amount: 0.5 }}
+      viewport={{ once: true }}
       className='relative w-full rounded-lg flex-shrink-0 px-8 py-6'
       style={{
         background: `linear-gradient(to bottom, #fafaf0 35%, ${color} 35%, ${color} 100%)`,
@@ -42,7 +42,7 @@ function ProductCard({ id, product }: ProductCardProps) {
         className='w-3/4 h-auto aspect-square object-contain mx-auto'
       />
       <div className='relative z-20 mt-6 flex flex-col items-center justify-center'>
-        <h4 className={`${regalDisplay.className} text-xl font-bold text-black-muted uppercase mb-2`}>
+        <h4 className={`${regalDisplay.className} text-xl lg:text-2xl font-bold text-black-muted uppercase mb-4`}>
           {product.name}
         </h4>
         <Link

@@ -28,8 +28,8 @@ function SimplifySourcing() {
             extensive selection of authentic food products sourced directly from the continent.
           </motion.p>
         </div>
-        <div className='grid grid-cols-2 gap-4 items-center'>
-          <div className='col-span-2 lg:col-span-1'>
+        <div className='grid grid-cols-2 gap-4 gap-y-8 items-center'>
+          <div className='col-span-2 lg:col-span-1 order-2 lg:order-1'>
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -95,9 +95,12 @@ function SimplifySourcing() {
             </motion.div>
             <CTAButtons />
           </div>
-          <div className='col-span-2 lg:col-span-1 hidden lg:flex justify-end'>
+          <div className='col-span-2 lg:col-span-1 order-1 lg:order-2'>
             <div className='relative'>
               <motion.img
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 1 }}
                 src='/images/products/product-7.webp'
                 alt='Miri Piri'
                 width={600}
@@ -105,8 +108,8 @@ function SimplifySourcing() {
                 className='relative w-full h-auto aspect-square rounded-xl shadow-lg z-20'
               />
               <motion.img
-                initial={{ translateX: 0, rotate: 0 }}
-                whileInView={{ translateX: '56px', rotate: '12deg' }}
+                initial={{ translateX: 0, rotate: 0, opacity: 0 }}
+                whileInView={{ translateX: '56px', rotate: '12deg', opacity: 1 }}
                 viewport={{ once: true, amount: 0.8 }}
                 src='/images/products/product-13.jpg'
                 alt='Miri Piri'
@@ -115,8 +118,8 @@ function SimplifySourcing() {
                 className='hidden xl:block w-full h-auto aspect-square rounded-xl shadow absolute z-0 top-0'
               />
               <motion.img
-                initial={{ translateX: 0, rotate: 0 }}
-                whileInView={{ translateX: '-56px', rotate: '-12deg' }}
+                initial={{ translateX: 0, rotate: 0, opacity: 0 }}
+                whileInView={{ translateX: '-56px', rotate: '-12deg', opacity: 1 }}
                 viewport={{ once: true, amount: 0.8 }}
                 src='/images/products/product-13.jpg'
                 alt='Miri Piri'

@@ -7,7 +7,7 @@ import CTAButtons from '@/containers/CTAButtons';
 
 function IncreaseSales() {
   return (
-    <section className='relative bg-muted-orange pb-6 lg:pt-40'>
+    <section className='relative bg-muted-orange pb-10 lg:pt-40'>
       <div className='grid grid-cols-2 items-center gap-4 lg:gap-x-20'>
         <div className='col-span-2 lg:col-span-1 order-2 lg:order-1 py-8 px-4 lg:p-20'>
           <motion.div

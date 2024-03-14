@@ -12,7 +12,7 @@ function Footer() {
     <footer>
       <div className='spacing container mx-auto flex flex-col'>
         <span className={logoClassName}>KEWVE</span>
-        <div className='flex items-center justify-center gap-4 my-8'>
+        <div className='flex flex-col lg:flex-row items-center justify-center gap-x-16 gap-y-3 my-8'>
           <Link href='/terms' className={footerLinkClassName}>
             Terms & Conditions
           </Link>
