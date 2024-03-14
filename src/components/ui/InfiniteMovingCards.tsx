@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useEffect, useState, useRef } from 'react';
-import { cn, formatCurrency, getRandomColor, josefinSemiBold } from '@/utils';
+import { cn, getRandomColor, josefinSemiBold, regalDisplay } from '@/utils';
 import type { AllDocumentTypes } from '../../../prismicio-types';
 
 interface InfiniteMovingCardsProps {
@@ -76,40 +76,38 @@ export const InfiniteMovingCards = ({
       <div
         ref={scrollerRef}
         className={cn(
-          ' flex min-w-full shrink-0 gap-4 lg:gap-8 py-4 w-max flex-nowrap',
+          ' flex min-w-full shrink-0 gap-4 lg:gap-8 w-max flex-nowrap',
           start && 'animate-scroll ',
           pauseOnHover && 'hover:[animation-play-state:paused]'
         )}>
         {items.map((item, idx) => {
           const color = getRandomColor();
           return (
-            <div
-              className='relative w-[350px] md:w-[450px] max-w-full rounded-lg flex-shrink-0 px-8 py-6'
-              style={{
-                background: `linear-gradient(to bottom, #ff5c35 35%, ${color} 35%, ${color} 100%)`,
-              }}
-              key={item.data.name}>
+            <div className='relative w-[333px] max-w-full flex-shrink-0' key={item.data.name}>
               <div
                 aria-hidden='true'
                 className='user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]'></div>
-              <Image
-                src={item.data.image?.url ?? ''}
-                width={item.data.image?.dimensions?.width ?? 600}
-                height={item.data.image?.dimensions?.height ?? 600}
-                className='w-3/4 h-auto aspect-square object-contain mx-auto'
-                alt={item.data.image?.alt ?? 'Product'}
-              />
-              <div className='relative z-20 mt-6 flex flex-col items-center justify-center'>
-                <h4 className={`${josefinSemiBold.className} text-xl text-black-muted uppercase mb-2`}>
+              <div
+                className='relative w-full h-[430px] flex items-center rounded-[200px]'
+                style={{ backgroundColor: color }}>
+                <Image
+                  src={item.data.image?.url ?? ''}
+                  width={item.data.image?.dimensions?.width ?? 600}
+                  height={item.data.image?.dimensions?.height ?? 600}
+                  className='w-3/4 h-auto aspect-square object-contain mx-auto'
+                  alt={item.data.image?.alt ?? 'Product'}
+                />
+              </div>
+              <div className='relative z-20 flex mt-6 flex-col items-center'>
+                <h4
+                  className={`${regalDisplay.className} text-xl lg:text-2xl text-black font-bold tracking-wide uppercase mb-4`}>
                   {item.data.name}
                 </h4>
-                <h5 className={`${josefinSemiBold.className} text-xl text-black-muted mb-4`}>
-                  {formatCurrency(Number(item.data.price))}
-                </h5>
                 <Link
                   prefetch
                   href={`/products/${item.uid}`}
-                  className={`bg-orange rounded-full py-3 px-10 text-lg text-white shadow-lg tracking-wide ${josefinSemiBold.className}`}>
+                  className={`rounded-full py-3 px-10 text-lg text-black tracking-wide ${josefinSemiBold.className}`}
+                  style={{ backgroundColor: color }}>
                   Know More
                 </Link>
               </div>

@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Josefin_Sans } from 'next/font/google';
-import { formatCurrency, getRandomColor } from '@/utils';
+import { formatCurrency, getRandomColor, regalDisplay } from '@/utils';
 import type { ProductDocumentData } from '../../prismicio-types';
 import Link from 'next/link';
 
@@ -42,10 +42,9 @@ function ProductCard({ id, product }: ProductCardProps) {
         className='w-3/4 h-auto aspect-square object-contain mx-auto'
       />
       <div className='relative z-20 mt-6 flex flex-col items-center justify-center'>
-        <h4 className={`${josefinSemiBold.className} text-xl text-black-muted uppercase mb-2`}>{product.name}</h4>
-        <h5 className={`${josefinSemiBold.className} text-xl text-black-muted mb-4`}>
-          {formatCurrency(Number(product.price))}
-        </h5>
+        <h4 className={`${regalDisplay.className} text-xl font-bold text-black-muted uppercase mb-2`}>
+          {product.name}
+        </h4>
         <Link
           href={`/products/${id}`}
           prefetch

@@ -2,101 +2,135 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { poppinsRegular, josefinSemiBold } from '@/utils';
+import { regalDisplay, josefinRegular, josefinSemiBold, poppinsRegular } from '@/utils';
+import CTAButtons from '@/containers/CTAButtons';
 
 function DiscoverFlavours() {
   return (
-    <section className='relative bg-cream'>
+    <section className='bg-yellow py-10 lg:py-0'>
       <div className='spacing container xl:w-[80%] mx-auto'>
-        <div className='flex flex-col items-center mb-8 xl:mb-12'>
+        <div className='flex flex-col items-center mb-4 lg:mb-8 xl:mb-10'>
           <motion.h2
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
-            className={`text-3xl md:text-4xl xl:text-5xl text-black-muted text-center mb-4 ${josefinSemiBold.className}`}>
-            Discover Authentic African Flavors
+            className={`text-3xl md:text-4xl xl:text-6xl text-black font-bold text-center mb-4 ${regalDisplay.className}`}>
+            Discover Authentic <br /> African Flavours
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: 0.1 }}
-            className={`text-base md:text-lg text-black-muted leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${poppinsRegular.className}`}>
-            Delve into the heart of African culinary heritage with our platform, offering unparalleled access to an
-            extensive selection of authentic food products sourced directly from the continent.
+            className={`text-lg text-black leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${josefinRegular.className}`}>
+            KEWVE platform offers wholesalers like yourself access to a wide range of authentic African food products
+            directly from the source.
           </motion.p>
         </div>
-        <div className='grid grid-cols-2 gap-2'>
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            className='col-span-2 lg:col-span-1'>
-            <Image
-              src='/images/spices.jpg'
+        <div className='grid grid-cols-4 gap-4 mb-8 lg:mb-16 xl:mb-24'>
+          <div className='col-span-4 md:col-span-2 xl:col-span-1'>
+            <motion.img
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ delay: 0.2 }}
+              src='/images/products/product-8.jpg'
               alt='Spices from Africa'
               width={640}
-              height={800}
-              className='w-full h-[300px] lg:h-auto aspect-square object-cover rounded'
+              height={400}
+              className='w-full h-[300px] lg:h-[450px] aspect-square object-cover rounded-2xl'
             />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ delay: 0.2 }}
-            className='col-span-2 lg:col-span-1 bg-yellow-pattern rounded flex flex-col justify-center items-center py-6 px-4 md:px-6 xl:px-12 min-h-[300px]'>
-            <p
-              className={`text-sm xl:text-lg text-black-muted leading-relaxed text-center mx-auto max-w-full xl:max-w-[45ch] ${poppinsRegular.className}`}>
-              KEWVE platform offers wholesalers like yourself access to a wide range of authentic African food products
-              directly from the source.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            className='col-span-2 lg:col-span-1 bg-pink-pattern rounded flex flex-col justify-center items-center py-6 px-4 md:px-6 xl:px-12 order-2 lg:order-1 min-h-[300px]'>
-            <p
-              className={`text-base xl:text-lg text-black-muted leading-relaxed text-center mx-auto max-w-full xl:max-w-[45ch] ${poppinsRegular.className}`}>
-              Say goodbye to middlemen and enjoy a diverse selection of African food. Bid farewell to unnecessary
-              intermediaries, and embrace a direct connection with trusted suppliers. We make sourcing African food and
-              drink brands as easy as it should be.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ delay: 0.2 }}
-            className='col-span-2 lg:col-span-1 order-1 lg:order-2'>
-            <Image
-              src='/images/bazar.jpg'
-              alt='Flavours of Africa'
+          </div>
+          <div className='col-span-4 md:col-span-2 xl:col-span-1 md:mt-8'>
+            <motion.img
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ delay: 0.4 }}
+              src='/images/products/product-9.jpg'
+              alt='Spices from Africa'
               width={640}
-              height={960}
-              className='w-full h-[300px] lg:h-auto aspect-square object-cover'
+              height={400}
+              className='w-full h-[300px] lg:h-[450px] aspect-square object-cover rounded-2xl'
             />
+          </div>
+          <div className='col-span-4 md:col-span-2 xl:col-span-1'>
+            <motion.img
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ delay: 0.6 }}
+              src='/images/products/product-11.png'
+              alt='Spices from Africa'
+              width={640}
+              height={400}
+              className='w-full h-[300px] lg:h-[450px] aspect-square object-cover rounded-2xl'
+            />
+          </div>
+          <div className='col-span-4 md:col-span-2 xl:col-span-1 md:mt-8'>
+            <motion.img
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ delay: 0.8 }}
+              src='/images/products/product-16.jpg'
+              alt='Spices from Africa'
+              width={640}
+              height={400}
+              className='w-full h-[300px] lg:h-[450px] aspect-square object-cover rounded-2xl'
+            />
+          </div>
+        </div>
+        <div className='grid grid-cols-3 gap-4 lg:gap-8 xl:gap-10'>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            className='col-span-4 md:col-span-2 xl:col-span-1 text-center'>
+            <Image
+              src='/images/direct_access.svg'
+              alt='Direct Access'
+              width={64}
+              height={64}
+              className='mb-4 mx-auto'
+            />
+            <h3 className={`text-xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>Direct Access</h3>
+            <p className={`tex-sm lg:text-base text-black leading-relaxed ${poppinsRegular.className}`}>
+              Say goodbye to middlemen and enjoy a diverse selection of African food.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            className='col-span-4 md:col-span-2 xl:col-span-1 text-center'>
+            <Image
+              src='/images/direct_sourcing.svg'
+              alt='Direct Sourcing'
+              width={64}
+              height={64}
+              className='mb-4 mx-auto'
+            />
+            <h3 className={`text-xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>Direct Sourcing</h3>
+            <p className={`tex-sm lg:text-base text-black leading-relaxed ${poppinsRegular.className}`}>
+              Bid farewell to unnecessary intermediaries, and embrace a direct connection with trusted suppliers.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            className='col-span-4 md:col-span-2 xl:col-span-1 text-center'>
+            <Image src='/images/easy_access.svg' alt='Easy Access' width={64} height={64} className='mb-4 mx-auto' />
+            <h3 className={`text-xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>Easy Access</h3>
+            <p className={`tex-sm lg:text-base text-black leading-relaxed ${poppinsRegular.className}`}>
+              We make sourcing African food and drink brands as easy as it should be.
+            </p>
           </motion.div>
         </div>
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          className='flex flex-wrap justify-center gap-4 mt-8 lg:mt-14'>
-          <a
-            href='https://5y1f9ke4k38.typeform.com/to/x2Ut65IL'
-            target='_blank'
-            className={`w-full md:w-fit bg-orange rounded-full py-3 px-6 lg:py-4 lg:px-8  text-base lg:text-lg shadow-md text-white text-center ${josefinSemiBold.className}`}>
-            Become a Buyer
-          </a>
-          <a
-            href='https://5y1f9ke4k38.typeform.com/to/lEkbdbRx'
-            target='_blank'
-            className={`w-full md:w-fit bg-pink rounded-full py-3 px-6 lg:py-4 lg:px-8  text-base lg:text-lg shadow-md text-white text-center ${josefinSemiBold.className}`}>
-            Become a Supplier
-          </a>
-        </motion.div>
+        <div className='flex justify-center mt-6'>
+          <CTAButtons />
+        </div>
       </div>
     </section>
   );

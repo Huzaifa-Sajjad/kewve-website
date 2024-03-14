@@ -10,23 +10,35 @@ const config: Config = {
   ],
   theme: {
     colors: {
-      orange: '#ff5c35',
+      orange: '#ed722d',
+      'muted-orange': '#ED7B49',
       cream: '#fafaf0',
-      pink: '#FC8EAC',
-      yellow: '#fecd88',
-      brown: '#642821',
+      pink: '#dfaac5',
+      'dark-pink': '#d19db7',
+      yellow: '#eeb944',
+      brown: '#b15f4f',
+      'dark-brown': '#984e40',
       white: '#ffffff',
-      black: '#333333',
+      black: '#000000',
       'black-muted': '#3d3935',
     },
     extend: {
       animation: {
         scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
+        'meteor-effect': 'meteor 5s linear infinite',
       },
       keyframes: {
         scroll: {
           to: {
             transform: 'translate(calc(-50% - 0.5rem))',
+          },
+        },
+        meteor: {
+          '0%': { transform: 'rotate(215deg) translateX(0)', opacity: '1' },
+          '70%': { opacity: '1' },
+          '100%': {
+            transform: 'rotate(215deg) translateX(-500px)',
+            opacity: '0',
           },
         },
       },

@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --orange: #ed732e;
-  --orange-dark: #98400d;
+  --orange: #ed722d;
   --pink: #fb6bc8;
   --pink-dark: #eb0e9d;
   --white: #fff;
@@ -36,6 +35,14 @@ body {
   top: 0;
   left: 50%;
   transform: translate(-50%, -15%);
+}
+
+.landing-hero {
+  background: radial-gradient(
+    circle closest-side,
+    #f12711,
+    #ed722d
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bg-yellow-pattern {

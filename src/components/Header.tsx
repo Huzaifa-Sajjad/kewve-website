@@ -1,19 +1,15 @@
 'use client';
 
 import Link from 'next/link';
-import { Josefin_Sans } from 'next/font/google';
-import { useState } from 'react';
-
-const josefin = Josefin_Sans({ weight: '500', subsets: ['latin'] });
+import { josefinSemiBold } from '@/utils';
 
 function Header() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const logoClassName = `text-lg lg:text-xl text-white ${josefin.className}`;
-  const headerLinkClassName = `text-sm lg:text-base text-white uppercase ${josefin.className}`;
+  const logoClassName = `text-lg lg:text-2xl text-white tracking-wider font-bold ${josefinSemiBold.className}`;
+  const headerLinkClassName = `text-sm lg:text-base text-white uppercase ${josefinSemiBold.className}`;
 
   return (
     <header>
-      <div className='hidden lg:flex justify-center items-center bg-orange py-4 px-3 lg:px-4 gap-24'>
+      <div className='absolute w-full top-0 z-10 hidden lg:flex justify-center items-center py-4 px-3 lg:px-4 gap-24'>
         <Link prefetch href='/' className={headerLinkClassName}>
           Home
         </Link>

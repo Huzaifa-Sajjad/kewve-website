@@ -2,102 +2,131 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { poppinsRegular, josefinSemiBold } from '@/utils';
+import { josefinRegular, poppinsRegular, josefinSemiBold, regalDisplay } from '@/utils';
+import CTAButtons from '@/containers/CTAButtons';
 
 function SimplifySourcing() {
   return (
-    <section className='relative bg-orange'>
+    <section className='bg-muted-orange py-10 lg:py-0'>
       <div className='spacing container xl:w-[80%] mx-auto'>
-        <div className='flex flex-col items-center mb-8 lg:mb-12'>
+        <div className='flex flex-col items-center mb-8 lg:mb-16 xl:mb-24'>
           <motion.h2
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
-            className={`text-3xl md:text-4xl xl:text-5xl text-white text-center mb-4 ${josefinSemiBold.className}`}>
-            Simplify Your Sourcing Process
+            className={`text-3xl md:text-4xl xl:text-6xl text-center text-black font-bold mb-6 ${regalDisplay.className}`}>
+            Simplify Your <br />
+            Sourcing Process
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
-            transition={{ delay: 0.2 }}
-            className={`text-base lg:text-lg text-white leading-normal max-w-full lg:max-w-[65ch] mx-auto text-center ${poppinsRegular.className}`}>
-            Revolutionize your procurement journey with KEWVE&apos;s seamless solution. Unlock direct access to
-            top-quality African brands, streamlining your sourcing needs effortlessly. Experience efficiency and
-            reliability like never before.
+            transition={{ delay: 0.1 }}
+            className={`text-base lg:text-lg text-black leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${josefinRegular.className}`}>
+            Delve into the heart of African culinary heritage with our platform, offering unparalleled access to an
+            extensive selection of authentic food products sourced directly from the continent.
           </motion.p>
         </div>
-        <div className='grid grid-cols-3 gap-4'>
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            className='col-span-3 lg:col-span-1 p-8 bg-yellow-pattern rounded shadow-md text-center'>
-            <Image
-              src='/images/save_time.svg'
-              alt='Save Time'
-              width={64}
-              height={64}
-              className='mx-auto mb-4 xl:mb-6'
-            />
-            <h3 className={`text-xl text-black-muted leading-tight mb-4 ${josefinSemiBold.className}`}>
-              Effortless Procurement
-            </h3>
-            <p className={`text-sm text-black-muted leading-relaxed ${poppinsRegular.className}`}>
-              Save time using KEWVE. Easily source from trusted African brands, streamlining your procurement journey
-              for enhanced efficiency and a seamless experience
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ delay: 0.3 }}
-            className='col-span-3 lg:col-span-1 p-8 bg-yellow-pattern rounded shadow-md text-center'>
-            <Image src='/images/sourcing.svg' alt='Save Time' width={64} height={64} className='mx-auto mb-4 xl:mb-6' />
-            <h3 className={`text-xl text-black-muted leading-tight mb-4 ${josefinSemiBold.className}`}>
-              Effortless Sourcing
-            </h3>
-            <p className={`text-sm text-black-muted leading-relaxed ${poppinsRegular.className}`}>
-              We streamline sourcing for UK and European food retailers and wholesalers, ensuring efficiency and
-              convenience in the procurement process for a seamless experience.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ delay: 0.6 }}
-            className='col-span-3 lg:col-span-1 p-8 bg-yellow-pattern rounded shadow-md text-center'>
-            <Image src='/images/platform.svg' alt='Save Time' width={64} height={64} className='mx-auto mb-4 xl:mb-6' />
-            <h3 className={`text-xl text-black-muted leading-tight mb-4 ${josefinSemiBold.className}`}>
-              Seamless Access
-            </h3>
-            <p className={`text-sm text-black-muted leading-relaxed ${poppinsRegular.className}`}>
-              Instead of spending time and effort searching for reliable suppliers, our platform connects you with
-              trusted African food brands, ensuring a smooth sourcing experience
-            </p>
-          </motion.div>
+        <div className='grid grid-cols-2 gap-4 items-center'>
+          <div className='col-span-2 lg:col-span-1'>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              className='mb-6 xl:mb-10 text-center lg:text-left'>
+              <Image
+                src='/images/save_time.svg'
+                alt='Save Time'
+                width={48}
+                height={48}
+                className='mb-4 mx-auto lg:mx-0'
+              />
+              <h3 className={`text-xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
+                Effortless Procurement
+              </h3>
+              <p
+                className={`tex-sm lg:text-base text-black max-w-full lg:max-w-[45ch] leading-relaxed ${poppinsRegular.className}`}>
+                Save time with KEWVE, sourcing from trusted African brands for efficient procurement, ensuring a
+                seamless experience.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ delay: 0.3 }}
+              className='mb-6 xl:mb-10 text-center lg:text-left'>
+              <Image
+                src='/images/sourcing.svg'
+                alt='Save Time'
+                width={48}
+                height={48}
+                className='mb-5 mx-auto lg:mx-0'
+              />
+              <h3 className={`text-xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
+                Effortless Sourcing
+              </h3>
+              <p
+                className={`text-sm lg:text-base text-black max-w-full lg:max-w-[45ch] leading-relaxed ${poppinsRegular.className}`}>
+                Efficiently streamline sourcing for UK and European food retailers, ensuring convenience and seamless
+                procurement experience for all involved.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ delay: 0.6 }}
+              className='text-center lg:text-left'>
+              <Image
+                src='/images/platform.svg'
+                alt='Save Time'
+                width={48}
+                height={48}
+                className='mb-1 mx-auto lg:mx-0'
+              />
+              <h3 className={`text-xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>Seamless Access</h3>
+              <p
+                className={`text-sm lg:text-base text-black max-w-full lg:max-w-[45ch] leading-relaxed ${poppinsRegular.className}`}>
+                Connect effortlessly with trusted African food brands, saving time and effort in the search for reliable
+                suppliers.
+              </p>
+            </motion.div>
+            <CTAButtons />
+          </div>
+          <div className='col-span-2 lg:col-span-1 hidden lg:flex justify-end'>
+            <div className='relative'>
+              <motion.img
+                src='/images/products/product-7.webp'
+                alt='Miri Piri'
+                width={600}
+                height={400}
+                className='relative w-full h-auto aspect-square rounded-xl shadow-lg z-20'
+              />
+              <motion.img
+                initial={{ translateX: 0, rotate: 0 }}
+                whileInView={{ translateX: '56px', rotate: '12deg' }}
+                viewport={{ once: true, amount: 0.8 }}
+                src='/images/products/product-13.jpg'
+                alt='Miri Piri'
+                width={600}
+                height={400}
+                className='hidden xl:block w-full h-auto aspect-square rounded-xl shadow absolute z-0 top-0'
+              />
+              <motion.img
+                initial={{ translateX: 0, rotate: 0 }}
+                whileInView={{ translateX: '-56px', rotate: '-12deg' }}
+                viewport={{ once: true, amount: 0.8 }}
+                src='/images/products/product-13.jpg'
+                alt='Miri Piri'
+                width={600}
+                height={400}
+                className='hidden xl:block w-full h-auto aspect-square rounded-xl shadow absolute z-0 top-0'
+              />
+            </div>
+          </div>
         </div>
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ delay: 1 }}
-          className='flex flex-wrap justify-center gap-4 mt-8 lg:mt-14'>
-          <a
-            href='https://5y1f9ke4k38.typeform.com/to/x2Ut65IL'
-            target='_blank'
-            className={`w-full md:w-fit bg-white border-2 border-white rounded-full py-3 px-6 lg:py-4 lg:px-8  text-base lg:text-lg  text-black-muted hover:opacity-85 transition-all text-center ${josefinSemiBold.className}`}>
-            Become a Buyer
-          </a>
-          <a
-            href='https://5y1f9ke4k38.typeform.com/to/lEkbdbRx'
-            target='_blank'
-            className={`w-full md:w-fit bg-transparent border-2 border-white rounded-full py-3 px-6 lg:py-4 lg:px-8  text-base lg:text-lg text-white hover:opacity-85 transition-all text-center ${josefinSemiBold.className}`}>
-            Become a Supplier
-          </a>
-        </motion.div>
       </div>
     </section>
   );
