@@ -1,3 +1,5 @@
+'use server';
+
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { createClient } from '@/prismicio';
@@ -10,7 +12,7 @@ import Image from 'next/image';
 
 export default async function Products({ searchParams }: any) {
   const params = new URLSearchParams(searchParams);
-  const selectedBrand = params.get('brand') || 'all';
+  const selectedBrand = params.get('brand') || undefined;
   const client = createClient();
 
   const products = await client.getAllByType('product', {
@@ -33,7 +35,7 @@ export default async function Products({ searchParams }: any) {
   });
 
   const filteredProducts = () => {
-    if (selectedBrand && selectedBrand !== 'all') {
+    if (selectedBrand) {
       //@ts-ignore
       return products.filter((product) => product.data.brand.uid === selectedBrand);
     }
@@ -84,14 +86,6 @@ export default async function Products({ searchParams }: any) {
                       <Label htmlFor={brand.uid}>{brand.data.name}</Label>
                     </Link>
                   ))}
-                  <Link
-                    href='/products'
-                    key='All Brands'
-                    scroll={false}
-                    className='flex items-center space-x-4 cursor-pointer'>
-                    <RadioGroupItem value='all' id='all-brands' />
-                    <Label htmlFor='all brands'>All Brands</Label>
-                  </Link>
                 </RadioGroup>
               </aside>
             </div>
