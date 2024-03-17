@@ -1,15 +1,20 @@
 'use client';
 
-import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { regalDisplay, josefinRegular, josefinSemiBold, poppinsRegular } from '@/utils';
-import CTAButtons from '@/containers/CTAButtons';
+import { regalDisplay, josefinRegular } from '@/utils';
+import { AllDocumentTypes, BlogPostDocumentData } from '../../../prismicio-types';
+import { InfiniteMovingCards } from '@/components/ui/InfiniteMovingCards';
+import BlogCard from '@/components/BlogCard';
 
-function BlogSection() {
+interface BlogSectionProps {
+  posts: AllDocumentTypes[];
+}
+
+function BlogSection({ posts }: BlogSectionProps) {
   return (
-    <section className='bg-cream py-10 lg:py-0'>
+    <section className='bg-cream py-10 lg:pb-4 lg:-mt-8 xl:-mt-16'>
       <div className='spacing container xl:w-[80%] mx-auto'>
-        <div className='flex flex-col items-center'>
+        <div className='flex flex-col items-center mb-4 lg:mb-8 xl:mb-10'>
           <motion.h2
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -28,6 +33,14 @@ function BlogSection() {
           </motion.p>
         </div>
       </div>
+      <InfiniteMovingCards speed='fast'>
+        <>
+          {posts.map((post, idx) => {
+            const blogPost = post.data as unknown as BlogPostDocumentData;
+            return <BlogCard key={post.uid} uuid={post.uid} post={blogPost} />;
+          })}
+        </>
+      </InfiniteMovingCards>
     </section>
   );
 }

@@ -76,7 +76,9 @@ function IncreaseSales() {
               className='bg-dark-pink w-[80%] lg:w-[60%] h-auto rounded-3xl p-6 mx-auto lg:mx-0 mb-8'>
               <Image src='/images/sales.png' alt='World Food' height={350} width={350} className='w-full h-full' />
             </motion.div>
-            <CTAButtons />
+            <div className='flex justify-center lg:justify-start'>
+              <CTAButtons />
+            </div>
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@
   --pink-dark: #eb0e9d;
   --white: #fff;
   --black-muted: #3d3935;
+  --black: #000;
 }
 
 html,
@@ -23,49 +24,88 @@ body {
   padding: 0 1.5rem;
 }
 
-.huge-bg-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-}
-
-.huge-bg-text-top {
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -15%);
-}
-
 .landing-hero {
   background: radial-gradient(
     circle closest-side,
-    #f12711,
+    #ed722d,
     #ed722d
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.bg-yellow-pattern {
-  background: linear-gradient(to bottom, rgba(254, 205, 136, 0.9), rgba(254, 205, 136, 0.9)),
-    url('../assets/pattern.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
+.blog {
+  img {
+    width: fit-content;
+    height: fit-content;
+    max-height: 600px;
+    object-fit: cover;
+    margin: 24px auto;
+    border-radius: 16px;
+  }
 
-.bg-pink-pattern {
-  background: linear-gradient(to bottom, rgba(252, 142, 172, 0.9), rgba(252, 142, 172, 0.9)),
-    url('../assets/pattern.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--black);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
 
-.bg-orange-pattern {
-  background: linear-gradient(to bottom, rgba(255, 92, 53, 0.95), rgba(255, 92, 53, 0.95)), url('../assets/pattern.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  h1,
+  h2 {
+    font-size: 26px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+
+  h5 {
+    font-size: 18px;
+  }
+
+  h6 {
+    font-size: 16px;
+  }
+
+  p {
+    color: var(--black-muted);
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 12px 0;
+  }
+
+  ol,
+  ul {
+    margin-left: 20px;
+    padding-left: 20px;
+    li {
+      margin-bottom: 16px;
+      font-size: 16px;
+      color: var(--black-muted);
+      line-height: 1.8;
+    }
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  ol {
+    list-style: circle;
+  }
+
+  a {
+    color: #ed722d;
+    text-decoration: underline;
+    font-size: 16px;
+  }
 }
 
 .terms {
@@ -75,6 +115,7 @@ body {
     font-size: 16px;
     margin-bottom: 16px;
     color: var(--black-muted);
+    line-height: 2;
   }
 
   h2 {
@@ -85,7 +126,7 @@ body {
 
   h3 {
     font-size: 18px;
-    margin: 8px 0;
+    margin: 16px 0;
     color: #000;
   }
 
@@ -94,9 +135,10 @@ body {
     padding-left: 20px;
     list-style: decimal;
     li {
-      margin-bottom: 8px;
+      margin-bottom: 16px;
       font-size: 16px;
       color: var(--black-muted);
+      line-height: 2;
     }
   }
 

@@ -7,8 +7,8 @@ import Footer from '@/components/Footer';
 function Terms() {
   return (
     <>
-      <Header />
-      <section className='relative bg-cream pt-10 pb-4'>
+      <Header needsBackground />
+      <section className='relative bg-cream pt-16 lg:pt-28 pb-4'>
         <div className={`spacing container w-full lg:w-[60%] mx-auto terms ${poppinsRegular.className}`}>
           <div className='flex flex-col items-center'>
             <h2 className={`text-3xl text-black-muted text-center mb-2 ${josefinSemiBold.className}`}>

@@ -7,7 +7,7 @@ import CTAButtons from '@/containers/CTAButtons';
 
 function SimplifySourcing() {
   return (
-    <section className='bg-muted-orange py-10 lg:py-0'>
+    <section className='bg-muted-orange py-10 lg:py-0 lg:-mt-8 xl:-mt-16'>
       <div className='spacing container xl:w-[80%] mx-auto'>
         <div className='flex flex-col items-center mb-8 lg:mb-16 xl:mb-24'>
           <motion.h2
@@ -93,7 +93,9 @@ function SimplifySourcing() {
                 suppliers.
               </p>
             </motion.div>
-            <CTAButtons />
+            <div className='flex justify-center lg:justify-start'>
+              <CTAButtons />
+            </div>
           </div>
           <div className='col-span-2 lg:col-span-1 order-1 lg:order-2'>
             <div className='relative'>
@@ -101,8 +103,8 @@ function SimplifySourcing() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, amount: 1 }}
-                src='/images/products/product-7.webp'
-                alt='Miri Piri'
+                src='/images/products/chin-chin.jpg'
+                alt='Chin Chin'
                 width={600}
                 height={400}
                 className='relative w-full h-auto aspect-square rounded-xl shadow-lg z-20'
@@ -111,8 +113,8 @@ function SimplifySourcing() {
                 initial={{ translateX: 0, rotate: 0, opacity: 0 }}
                 whileInView={{ translateX: '56px', rotate: '12deg', opacity: 1 }}
                 viewport={{ once: true, amount: 0.8 }}
-                src='/images/products/product-13.jpg'
-                alt='Miri Piri'
+                src='/images/products/drink.jpg'
+                alt='Drink'
                 width={600}
                 height={400}
                 className='hidden xl:block w-full h-auto aspect-square rounded-xl shadow absolute z-0 top-0'
@@ -121,8 +123,8 @@ function SimplifySourcing() {
                 initial={{ translateX: 0, rotate: 0, opacity: 0 }}
                 whileInView={{ translateX: '-56px', rotate: '-12deg', opacity: 1 }}
                 viewport={{ once: true, amount: 0.8 }}
-                src='/images/products/product-13.jpg'
-                alt='Miri Piri'
+                src='/images/products/sauce.jpg'
+                alt='Sauce'
                 width={600}
                 height={400}
                 className='hidden xl:block w-full h-auto aspect-square rounded-xl shadow absolute z-0 top-0'

@@ -11,13 +11,13 @@ function OurStory() {
   return (
     <>
       <Header />
-      <section className='landing-hero relative min-h-[30vh] flex flex-col items-center pt-16 lg:pt-40 lg:pb-0 overflow-x-hidden'>
+      <section className='landing-hero relative flex flex-col items-center py-16 overflow-x-hidden'>
         <div className='container spacing mx-auto'>
           <motion.p
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className={`${regalDisplay.className} block text-4xl lg:text-5xl xl:text-6xl font-bold text-white text-center max-w-full md:max-w-[30ch] mx-auto mt-6 mb-8 lg:mb-10`}>
+            className={`${regalDisplay.className} block text-4xl lg:text-5xl xl:text-6xl font-bold text-white text-center max-w-full md:max-w-[30ch] mx-auto lg:mt-16`}>
             Kewve is your gateway to a delightful world of African flavours, connecting premium African food brands with
             international buyers.
           </motion.p>
@@ -31,7 +31,7 @@ function OurStory() {
             d='M0,256L120,218.7C240,181,480,107,720,106.7C960,107,1200,181,1320,218.7L1440,256L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z'></path>
         </svg>
       </section>
-      <section className='relative bg-pink'>
+      <section className='relative bg-pink py-10 lg:py-0 lg:-mt-8 xl:-mt-16'>
         <div className='spacing container xl:w-[80%] mx-auto'>
           <div className='grid grid-cols-2 gap-4 items-center'>
             <div className='col-span-2 lg:col-span-1 order-2 lg:order-1'>
@@ -68,8 +68,8 @@ function OurStory() {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true, amount: 1 }}
-                  src='/images/products/product-7.webp'
-                  alt='Miri Piri'
+                  src='/images/products/drink.jpg'
+                  alt='Spice'
                   width={600}
                   height={400}
                   className='relative w-full h-auto aspect-square rounded-xl shadow-lg z-20'
@@ -78,7 +78,7 @@ function OurStory() {
                   initial={{ translateX: 0, rotate: 0, opacity: 0 }}
                   whileInView={{ translateX: '56px', rotate: '12deg', opacity: 1 }}
                   viewport={{ once: true, amount: 0.8 }}
-                  src='/images/products/product-13.jpg'
+                  src='/images/products/sauce.jpg'
                   alt='Miri Piri'
                   width={600}
                   height={400}
@@ -88,7 +88,7 @@ function OurStory() {
                   initial={{ translateX: 0, rotate: 0, opacity: 0 }}
                   whileInView={{ translateX: '-56px', rotate: '-12deg', opacity: 1 }}
                   viewport={{ once: true, amount: 0.8 }}
-                  src='/images/products/product-13.jpg'
+                  src='/images/products/spice.jpg'
                   alt='Miri Piri'
                   width={600}
                   height={400}

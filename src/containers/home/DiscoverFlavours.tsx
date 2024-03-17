@@ -7,7 +7,7 @@ import CTAButtons from '@/containers/CTAButtons';
 
 function DiscoverFlavours() {
   return (
-    <section className='bg-yellow py-10 lg:py-0'>
+    <section className='bg-yellow py-10 lg:py-0 lg:-mt-8 xl:-mt-16'>
       <div className='spacing container xl:w-[80%] mx-auto'>
         <div className='flex flex-col items-center mb-4 lg:mb-8 xl:mb-10'>
           <motion.h2
@@ -23,8 +23,8 @@ function DiscoverFlavours() {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: 0.1 }}
             className={`text-lg text-black leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${josefinRegular.className}`}>
-            KEWVE platform offers wholesalers like yourself access to a wide range of authentic African food products
-            directly from the source.
+            KEWVE platform offers Food & Bev Buyers access to a wide range of authentic African food products directly
+            from the source.
           </motion.p>
         </div>
         <div className='grid grid-cols-4 gap-4 mb-8 lg:mb-16 xl:mb-24'>
@@ -34,7 +34,7 @@ function DiscoverFlavours() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ delay: 0.2 }}
-              src='/images/products/product-8.jpg'
+              src='/images/products/spice.jpg'
               alt='Spices from Africa'
               width={640}
               height={400}
@@ -47,8 +47,8 @@ function DiscoverFlavours() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              src='/images/products/product-9.jpg'
-              alt='Spices from Africa'
+              src='/images/products/snack.webp'
+              alt='Snacks from Africa'
               width={640}
               height={400}
               className='w-full h-[300px] lg:h-[450px] aspect-square object-cover rounded-2xl'
@@ -60,8 +60,8 @@ function DiscoverFlavours() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6 }}
-              src='/images/products/product-11.png'
-              alt='Spices from Africa'
+              src='/images/products/drink.jpg'
+              alt='Drinks from Africa'
               width={640}
               height={400}
               className='w-full h-[300px] lg:h-[450px] aspect-square object-cover rounded-2xl'
@@ -73,8 +73,8 @@ function DiscoverFlavours() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ delay: 0.8 }}
-              src='/images/products/product-16.jpg'
-              alt='Spices from Africa'
+              src='/images/products/sauce.jpg'
+              alt='Sauces from Africa'
               width={640}
               height={400}
               className='w-full h-[300px] lg:h-[450px] aspect-square object-cover rounded-2xl'
@@ -86,7 +86,7 @@ function DiscoverFlavours() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
-            className='col-span-4 md:col-span-2 xl:col-span-1 text-center'>
+            className='col-span-4 lg:col-span-1 text-center'>
             <Image
               src='/images/direct_access.svg'
               alt='Direct Access'
@@ -103,7 +103,7 @@ function DiscoverFlavours() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
-            className='col-span-4 md:col-span-2 xl:col-span-1 text-center'>
+            className='col-span-4 lg:col-span-1 text-center'>
             <Image
               src='/images/direct_sourcing.svg'
               alt='Direct Sourcing'
@@ -120,7 +120,7 @@ function DiscoverFlavours() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
-            className='col-span-4 md:col-span-2 xl:col-span-1 text-center'>
+            className='col-span-4 lg:col-span-1 text-center'>
             <Image src='/images/easy_access.svg' alt='Easy Access' width={64} height={64} className='mb-4 mx-auto' />
             <h3 className={`text-xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>Easy Access</h3>
             <p className={`tex-sm lg:text-base text-black leading-relaxed ${poppinsRegular.className}`}>

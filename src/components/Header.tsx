@@ -3,13 +3,18 @@
 import Link from 'next/link';
 import { josefinSemiBold } from '@/utils';
 
-function Header() {
+interface HeaderProps {
+  needsBackground?: boolean;
+}
+
+function Header({ needsBackground = false }: HeaderProps) {
   const logoClassName = `text-lg lg:text-2xl text-white tracking-wider font-bold ${josefinSemiBold.className}`;
   const headerLinkClassName = `text-sm lg:text-base text-white uppercase ${josefinSemiBold.className}`;
 
   return (
     <header>
-      <div className='absolute w-full top-0 z-10 hidden lg:flex justify-center items-center py-4 px-3 lg:px-4 gap-24'>
+      <div
+        className={`absolute w-full top-0 z-10 hidden lg:flex justify-center items-center py-4 px-3 lg:px-4 gap-24 ${needsBackground ? 'bg-orange' : ''}`}>
         <Link prefetch href='/' className={headerLinkClassName}>
           Home
         </Link>

@@ -1,12 +1,8 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { createClient } from '@/prismicio';
-import { Poppins, Josefin_Sans } from 'next/font/google';
 import ProductCard from '@/components/ProductCard';
-import { josefinRegular, regalDisplay } from '@/utils';
-
-const poppinsRegular = Poppins({ weight: '400', subsets: ['latin'] });
-const josefinSemiBold = Josefin_Sans({ weight: '600', subsets: ['latin'] });
+import { josefinRegular, josefinSemiBold, regalDisplay } from '@/utils';
 
 export default async function Products() {
   const client = createClient();
@@ -23,14 +19,20 @@ export default async function Products() {
     ],
   });
 
+  const brands = await client.getAllByType('brand', {
+    fetchOptions: {
+      next: { revalidate: 60 },
+    },
+  });
+
   return (
     <>
       <Header />
-      <section className='landing-hero relative min-h-[40vh] flex flex-col items-center pt-16 lg:pt-40 lg:pb-0 overflow-x-hidden'>
-        <div className='container spacing mx-auto'>
+      <section className='landing-hero relative flex flex-col items-center py-16 overflow-x-hidden'>
+        <div className='container spacing mx-auto lg:mt-16'>
           <h1
             className={`text-3xl md:text-4xl xl:text-6xl font-bold text-white text-center mb-4 ${regalDisplay.className}`}>
-            Discover Authentic <br /> African Flavors
+            Discover Authentic <br /> African Flavours
           </h1>
           <p
             className={`text-base md:text-lg text-white leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${josefinRegular.className}`}>
@@ -50,11 +52,40 @@ export default async function Products() {
       <section className='bg-cream py-10 lg:py-0 lg:-mt-8 xl:-mt-16'>
         <div className='spacing container mx-auto'>
           <div className='grid grid-cols-12 gap-4 xl:gap-6'>
-            {products.map((product) => (
-              <div key={product.uid} className='col-span-12 md:col-span-6 xl:col-span-4'>
-                <ProductCard id={product.uid} product={product.data} />
+            <div className='col-span-12 md:col-span-2'>
+              <aside className='sticky top-0'>
+                <h3 className={`text-xl md:text-2xl font-bold text-black text-left mb-4 ${josefinSemiBold.className}`}>
+                  Filter by Brand
+                </h3>
+                <div className='flex flex-row flex-wrap md:flex-col md:flex-nowrap gap-4'>
+                  {brands.map((brand) => (
+                    <div key={brand.uid} className='flex items-center gap-3'>
+                      <label className='radio-box-container'>
+                        {brand.data.name}
+                        <input
+                          id={brand.uid.toString()}
+                          type='radio'
+                          value={brand.data.name?.toString()}
+                          name='filter-brand'
+                          className={`text-lg font-bold text-black bg-pink bg-opacity-50 rounded py-3 px-4 text-left ${josefinSemiBold.className}`}
+                          key={brand.uid}
+                        />
+                        <span className='checkmark'></span>
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              </aside>
+            </div>
+            <div className='col-span-12 md:col-span-10'>
+              <div className='grid grid-cols-12 gap-4 xl:gap-6'>
+                {products.map((product) => (
+                  <div key={product.uid} className='col-span-12 md:col-span-6 xl:col-span-4'>
+                    <ProductCard id={product.uid} product={product.data} />
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>

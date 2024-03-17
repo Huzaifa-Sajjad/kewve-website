@@ -1,7 +1,7 @@
 {
   "format": "page",
-  "id": "product",
-  "label": "Product",
+  "id": "blog_post",
+  "label": "Blog Post",
   "repeatable": true,
   "status": true,
   "json": {
@@ -12,65 +12,36 @@
         },
         "type": "UID"
       },
-      "name": {
+      "title": {
         "type": "Text",
         "config": {
-          "label": "name",
+          "label": "Title",
           "placeholder": ""
         }
       },
-      "featured": {
-        "type": "Boolean",
-        "config": {
-          "label": "featured",
-          "default_value": false,
-          "placeholder_true": "true",
-          "placeholder_false": "false"
-        }
-      },
-      "category": {
-        "type": "Select",
-        "config": {
-          "label": "category",
-          "placeholder": "",
-          "options": ["Chips", "Snacks"]
-        }
-      },
-      "price": {
-        "type": "Number",
-        "config": {
-          "label": "price",
-          "placeholder": ""
-        }
-      },
-      "moq": {
-        "type": "Number",
-        "config": {
-          "label": "MOQ",
-          "placeholder": ""
-        }
-      },
-      "image": {
+      "banner": {
         "type": "Image",
         "config": {
-          "label": "image",
+          "label": "Banner",
           "constraint": {},
           "thumbnails": []
         }
       },
-      "short_description": {
-        "type": "Text",
+      "content": {
+        "type": "StructuredText",
         "config": {
-          "label": "Short Description",
-          "placeholder": ""
+          "label": "Content",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
-      "brand": {
+      "author": {
         "type": "Link",
         "config": {
-          "label": "Brand",
+          "label": "Author",
           "select": "document",
-          "customtypes": ["brand"]
+          "customtypes": ["author"]
         }
       },
       "slices": {

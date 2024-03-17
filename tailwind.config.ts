@@ -11,7 +11,7 @@ const config: Config = {
   theme: {
     colors: {
       orange: '#ed722d',
-      'muted-orange': '#ED7B49',
+      'muted-orange': '#ed7b49',
       cream: '#fafaf0',
       pink: '#dfaac5',
       'dark-pink': '#d19db7',

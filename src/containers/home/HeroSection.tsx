@@ -1,13 +1,14 @@
 'use client';
-
+import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { josefinRegular, marker } from '@/utils';
-import { regalDisplay } from '@/utils/fonts';
+import { josefinRegular } from '@/utils';
+import { regalDisplay, josefinSemiBold, getRandomColor } from '@/utils';
 import { InfiniteMovingCards } from '@/components/ui/InfiniteMovingCards';
-import { AllDocumentTypes } from '../../../prismicio-types';
+import { ProductDocument } from '../../../prismicio-types';
 
 interface HeroSectionProps {
-  items: AllDocumentTypes[];
+  items: ProductDocument[];
 }
 
 function HeroSection({ items }: HeroSectionProps) {
@@ -32,11 +33,48 @@ function HeroSection({ items }: HeroSectionProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
           className={`text-[20px] lg:text-[22px] text-white text-center max-w-[60ch] mx-auto mt-6 mb-8 lg:mb-10 ${josefinRegular.className}`}>
-          Discover the vibrant tapestry of flavors woven throughout Africa with our extensive array of handpicked
+          Discover the vibrant tapestry of flavours woven throughout Africa with our extensive array of handpicked
           African culinary delights.
         </motion.p>
       </div>
-      <InfiniteMovingCards items={items} />
+      <InfiniteMovingCards>
+        <>
+          {items.map((item, idx) => {
+            const color = getRandomColor();
+            return (
+              <div className='relative w-[333px] max-w-full flex-shrink-0 cursor-grab' key={item.data.name}>
+                <div
+                  aria-hidden='true'
+                  className='user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]'></div>
+                <div
+                  className='relative w-full h-[430px] flex items-center rounded-[200px]'
+                  style={{ backgroundColor: color }}>
+                  <Image
+                    src={item.data.image?.url ?? ''}
+                    width={item.data.image?.dimensions?.width ?? 600}
+                    height={item.data.image?.dimensions?.height ?? 600}
+                    className='w-3/4 h-auto aspect-square object-contain mx-auto pointer-events-none'
+                    alt={item.data.image?.alt ?? 'Product'}
+                  />
+                </div>
+                <div className='relative z-20 flex mt-6 flex-col items-center'>
+                  <h4
+                    className={`${regalDisplay.className} text-xl lg:text-2xl text-black font-bold tracking-wide uppercase mb-4`}>
+                    {item.data.name}
+                  </h4>
+                  <Link
+                    prefetch
+                    href={`/products/${item.uid}`}
+                    className={`rounded-full py-3 px-10 text-lg text-black tracking-wide ${josefinSemiBold.className}`}
+                    style={{ backgroundColor: color }}>
+                    Know More
+                  </Link>
+                </div>
+              </div>
+            );
+          })}
+        </>
+      </InfiniteMovingCards>
     </section>
   );
 }

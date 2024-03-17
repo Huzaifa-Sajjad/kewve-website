@@ -36,7 +36,9 @@ function WorldFoodCategory() {
               className='bg-dark-brown w-[80%] lg:w-[60%] h-auto rounded-3xl p-6 mx-auto lg:mx-0 mb-8'>
               <Image src='/images/world_food.png' alt='World Food' height={350} width={350} className='w-full h-full' />
             </motion.div>
-            <CTAButtons />
+            <div className='flex justify-center lg:justify-start'>
+              <CTAButtons />
+            </div>
           </div>
         </div>
         <div className='col-span-2 lg:col-span-1 py-8 px-4 lg:p-20'>
