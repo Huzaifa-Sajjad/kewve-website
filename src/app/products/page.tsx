@@ -1,18 +1,15 @@
-'use server';
-
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { createClient } from '@/prismicio';
-import ProductCard from '@/components/ProductCard';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { josefinRegular, josefinSemiBold, regalDisplay } from '@/utils';
 import Link from 'next/link';
-import Image from 'next/image';
+import ProductGrid from '@/containers/ProductGrid';
 
 export default async function Products({ searchParams }: any) {
   const params = new URLSearchParams(searchParams);
-  const selectedBrand = params.get('brand') || undefined;
+  const selectedBrand = params.get('brand') || 'all';
   const client = createClient();
 
   const products = await client.getAllByType('product', {
@@ -33,15 +30,6 @@ export default async function Products({ searchParams }: any) {
       next: { revalidate: 60 },
     },
   });
-
-  const filteredProducts = () => {
-    if (selectedBrand) {
-      //@ts-ignore
-      return products.filter((product) => product.data.brand.uid === selectedBrand);
-    }
-
-    return products;
-  };
 
   return (
     <>
@@ -86,38 +74,19 @@ export default async function Products({ searchParams }: any) {
                       <Label htmlFor={brand.uid}>{brand.data.name}</Label>
                     </Link>
                   ))}
+                  <Link
+                    href='/products'
+                    key='All Brands'
+                    scroll={false}
+                    className='flex items-center space-x-4 cursor-pointer'>
+                    <RadioGroupItem value='all' id='all-brands' />
+                    <Label htmlFor='all brands'>All Brands</Label>
+                  </Link>
                 </RadioGroup>
               </aside>
             </div>
             <div className='col-span-12 md:col-span-9 xl:col-span-10'>
-              <div className='grid grid-cols-12 gap-4 xl:gap-6'>
-                {filteredProducts().length > 0 &&
-                  filteredProducts().map((product) => (
-                    <div key={product.uid} className='col-span-12 md:col-span-6 xl:col-span-4'>
-                      <ProductCard id={product.uid} product={product.data} />
-                    </div>
-                  ))}
-                {filteredProducts().length === 0 && (
-                  <div className='col-span-12 flex flex-col items-center'>
-                    <Image
-                      src='/images/empty.svg'
-                      width={300}
-                      height={300}
-                      alt='Empty Illustraion'
-                      className='mx-auto mb-4 lg:mb-8'
-                    />
-                    <h3 className={`text-xl font-bold text-black text-left mb-4 ${josefinSemiBold.className}`}>
-                      No products found for the selected brand
-                    </h3>
-                    <Link
-                      href='/products'
-                      scroll={false}
-                      className={`bg-black text-white rounded-full py-3 px-6 ${josefinSemiBold.className}`}>
-                      Reset Filter
-                    </Link>
-                  </div>
-                )}
-              </div>
+              <ProductGrid items={products} />
             </div>
           </div>
         </div>
