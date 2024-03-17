@@ -8,7 +8,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ProductCard from '@/components/ProductCard';
 
-export const preventSSG = true;
+export const revalidate = 0;
 
 export default async function Products({ searchParams }: any) {
   const params = new URLSearchParams(searchParams);
