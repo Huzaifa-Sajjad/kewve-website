@@ -6,7 +6,7 @@ import { regalDisplay } from '@/utils';
 import ProductCard from '@/components/ProductCard';
 import { PopupButton } from '@typeform/embed-react';
 import { Poppins, Josefin_Sans, Permanent_Marker } from 'next/font/google';
-import type { AllDocumentTypes, ProductDocumentData } from '../../prismicio-types';
+import type { ProductDocument, ProductDocumentData } from '../../prismicio-types';
 
 const poppinsRegular = Poppins({ weight: '400', subsets: ['latin'] });
 const josefinSemiBold = Josefin_Sans({ weight: '600', subsets: ['latin'] });
@@ -15,7 +15,7 @@ const marker = Permanent_Marker({ weight: '400', subsets: ['latin'] });
 interface ProductDetailProps {
   id: string;
   product: ProductDocumentData;
-  products: AllDocumentTypes[];
+  products: ProductDocument[];
 }
 
 function ProductDetail({ id, product, products }: ProductDetailProps) {
