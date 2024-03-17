@@ -42,7 +42,7 @@ function ProductCard({ id, product }: ProductCardProps) {
         className='w-3/4 h-auto aspect-square object-contain mx-auto'
       />
       <div className='relative z-20 mt-6 flex flex-col items-center justify-center'>
-        <h4 className={`${regalDisplay.className} text-xl lg:text-2xl font-bold text-black-muted uppercase mb-4`}>
+        <h4 className={`${regalDisplay.className} text-xl font-bold text-black-muted uppercase mb-4`}>
           {product.name}
         </h4>
         <Link

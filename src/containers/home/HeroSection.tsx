@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { josefinRegular } from '@/utils';
-import { regalDisplay, josefinSemiBold, getRandomColor } from '@/utils';
+import { blowBrush, regalDisplay, josefinSemiBold, getRandomColor } from '@/utils';
 import { InfiniteMovingCards } from '@/components/ui/InfiniteMovingCards';
 import { ProductDocument } from '../../../prismicio-types';
 
@@ -18,14 +18,14 @@ function HeroSection({ items }: HeroSectionProps) {
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          className={`text-6xl lg:text-9xl text-white font-black uppercase text-center tracking-wide text-with-shadow ${regalDisplay.className}`}>
+          className={`text-7xl lg:text-9xl xl:text-[156px] text-white font-black uppercase text-center tracking-wide text-with-shadow ${blowBrush.className}`}>
           Love Africa
         </motion.h2>
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className={`text-5xl lg:text-8xl text-white font-black uppercase text-center tracking-wide text-with-shadow ${regalDisplay.className}`}>
+          className={`text-6xl lg:text-8xl xl:text-[136px] text-white font-black uppercase text-center tracking-wide text-with-shadow ${blowBrush.className}`}>
           Taste Africa
         </motion.h2>
         <motion.p
