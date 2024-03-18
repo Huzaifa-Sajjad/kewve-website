@@ -1,17 +1,19 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import React from 'react';
 import { Josefin_Sans } from 'next/font/google';
 
 const josefin = Josefin_Sans({ weight: '500', subsets: ['latin'] });
 
 function Footer() {
-  const logoClassName = `block text-center text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white ${josefin.className}`;
   const footerLinkClassName = `text-sm lg:text-base text-center text-white underline ${josefin.className}`;
 
   return (
-    <footer>
+    <footer className='pt-10'>
       <div className='spacing container mx-auto flex flex-col'>
-        <span className={logoClassName}>KEWVE</span>
+        <div>
+          <Image src='/logo.png' width={200} height={40} alt='Kewve logo' className='w-auto h-8 mx-auto' />
+        </div>
         <div className='flex flex-col lg:flex-row items-center justify-center gap-x-16 gap-y-3 my-8'>
           <Link href='/terms' className={footerLinkClassName}>
             Terms & Conditions
