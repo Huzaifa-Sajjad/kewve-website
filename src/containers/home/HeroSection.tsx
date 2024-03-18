@@ -13,7 +13,7 @@ interface HeroSectionProps {
 
 function HeroSection({ items }: HeroSectionProps) {
   return (
-    <section className='landing-hero relative min-h-[100vh] flex flex-col items-center pt-16 pb-10 lg:pt-40 lg:pb-0 overflow-x-hidden'>
+    <section className='landing-hero relative min-h-[100vh] flex flex-col items-center pt-10 pb-10 lg:pt-40 lg:pb-0 overflow-x-hidden'>
       <div className='spacing relative z-10'>
         <motion.h2
           initial={{ opacity: 0, y: 50 }}

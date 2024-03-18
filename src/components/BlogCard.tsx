@@ -33,8 +33,7 @@ function BlogCard({ uuid, post, gridView = false }: BlogCardProps) {
           {post.title}
         </h4>
         <h6 className={`${josefinRegular.className} text-base lg:text-lg text-white mb-4 `}>
-          A post by
-          {/*@ts-ignore */}
+          A post by {/*@ts-ignore */}
           {post.author.data.name}
         </h6>
         <Link
