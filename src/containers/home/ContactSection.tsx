@@ -138,8 +138,10 @@ function ContactSection() {
                 </div>
               </div>
               <div className='col-span-4'>
-                <Label htmlFor='country'>Country/Region</Label>
-                <Input type='text' name='country' id='country' placeholder='Great Britain' />
+                <div className='flex flex-col gap-2'>
+                  <Label htmlFor='country'>Country/Region</Label>
+                  <Input type='text' name='country' id='country' placeholder='Great Britain' />
+                </div>
               </div>
               <button
                 type='submit'
