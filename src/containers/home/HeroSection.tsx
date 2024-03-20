@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { josefinRegular } from '@/utils';
-import { blowBrush, regalDisplay, josefinSemiBold, getRandomColor } from '@/utils';
+import { titleFont, regalDisplay, josefinSemiBold, getRandomColor } from '@/utils';
 import { InfiniteMovingCards } from '@/components/ui/InfiniteMovingCards';
 import { ProductDocument } from '../../../prismicio-types';
 
@@ -13,19 +13,19 @@ interface HeroSectionProps {
 
 function HeroSection({ items }: HeroSectionProps) {
   return (
-    <section className='landing-hero relative min-h-[100vh] flex flex-col items-center pt-10 pb-10 lg:pt-40 lg:pb-0 overflow-x-hidden'>
+    <section className='landing-hero relative min-h-[100vh] flex flex-col items-center pt-16 pb-10 lg:pt-40 lg:pb-0 overflow-x-hidden'>
       <div className='spacing relative z-10'>
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          className={`text-7xl lg:text-9xl xl:text-[156px] text-white font-black uppercase text-center tracking-wide text-with-shadow ${blowBrush.className}`}>
+          className={`text-7xl lg:text-9xl xl:text-[156px] text-white text-center tracking-wide text-with-shadow ${titleFont.className}`}>
           Love Africa
         </motion.h2>
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className={`text-6xl lg:text-8xl xl:text-[136px] text-white font-black uppercase text-center tracking-wide text-with-shadow ${blowBrush.className}`}>
+          className={`text-6xl lg:text-8xl xl:text-[136px] text-white text-center tracking-wide text-with-shadow ${titleFont.className}`}>
           Taste Africa
         </motion.h2>
         <motion.p
@@ -59,7 +59,7 @@ function HeroSection({ items }: HeroSectionProps) {
                 </div>
                 <div className='relative z-20 flex mt-6 flex-col items-center'>
                   <h4
-                    className={`${regalDisplay.className} text-xl lg:text-2xl text-black font-bold tracking-wide uppercase mb-4`}>
+                    className={`${regalDisplay.className} text-xl text-black font-bold tracking-wide text-center uppercase mb-4`}>
                     {item.data.name}
                   </h4>
                   <Link

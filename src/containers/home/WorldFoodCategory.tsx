@@ -10,7 +10,7 @@ function WorldFoodCategory() {
     <section className='relative bg-muted-orange py-10 lg:pt-40'>
       <div className='grid grid-cols-2 items-center gap-4 lg:gap-x-20'>
         <div className='col-span-2 lg:col-span-1'>
-          <div className='bg-brown py-14 px-4 lg:p-20 rounded-tl-[40px] rounded-tr-[40px] rounded-bl-[40px] rounded-br-[40px] lg:rounded-tr-[200px] lg:rounded-br-[200px] lg:rounded-tl-none lg:rounded-bl-none'>
+          <div className='bg-yellow py-14 px-4 lg:p-20 rounded-tl-[40px] rounded-tr-[40px] rounded-bl-[40px] rounded-br-[40px] lg:rounded-tr-[200px] lg:rounded-br-[200px] lg:rounded-tl-none lg:rounded-bl-none'>
             <div className='flex flex-col items-center lg:items-start mb-8'>
               <motion.h2
                 initial={{ opacity: 0, y: 50 }}
@@ -33,7 +33,7 @@ function WorldFoodCategory() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
-              className='bg-dark-brown w-[80%] lg:w-[60%] h-auto rounded-3xl p-6 mx-auto lg:mx-0 mb-8'>
+              className='bg-yellow-dark w-[80%] lg:w-[60%] h-auto rounded-3xl p-6 mx-auto lg:mx-0 mb-8'>
               <Image src='/images/world_food.png' alt='World Food' height={350} width={350} className='w-full h-full' />
             </motion.div>
             <div className='flex justify-center lg:justify-start'>

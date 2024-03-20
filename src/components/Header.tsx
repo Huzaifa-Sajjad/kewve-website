@@ -28,15 +28,16 @@ function Header({ needsBackground = false }: HeaderProps) {
     <>
       <header>
         <div
-          className={`absolute w-full h-auto top-0 z-10 hidden lg:flex lg:justify-center lg:items-baseline py-4 px-3 lg:px-4 gap-24 ${needsBackground ? 'bg-orange' : ''}`}>
+          className={`absolute w-full h-auto top-0 z-50 hidden lg:flex lg:justify-center lg:items-baseline py-4 px-3 lg:px-4 gap-24 ${needsBackground ? 'bg-orange' : ''}`}>
           <Link prefetch href='/' className={headerLinkClassName}>
             Home
           </Link>
           <Link prefetch href='/our-story' className={headerLinkClassName}>
             Our Story
           </Link>
-          <Link prefetch href='/'>
-            <Image src='/logo.png' width={200} height={24} alt='Kewve logo' className='w-auto h-6' />
+          <Link prefetch href='/' className='flex relative'>
+            <Image src='/logo-color.png' width={200} height={24} alt='Kewve logo' className='w-auto h-6 z-50' />
+            <div className='absolute -top-[90px] -right-[23px] rounded-full bg-white h-40 w-40'></div>
           </Link>
           <Link prefetch href='/products' className={headerLinkClassName}>
             Products
@@ -45,9 +46,10 @@ function Header({ needsBackground = false }: HeaderProps) {
             Blog
           </Link>
         </div>
-        <div className='flex lg:hidden justify-between items-center bg-orange py-4 px-4'>
-          <Link prefetch href='/'>
-            <Image src='/logo.png' width={200} height={20} alt='Kewve logo' className='w-auto h-5' />
+        <div className='flex relative z-50 overflow-visible lg:hidden justify-between items-center bg-orange py-4 px-4'>
+          <Link prefetch href='/' className='flex'>
+            <Image src='/logo-color.png' width={200} height={24} alt='Kewve logo' className='w-auto h-5 z-50' />
+            <div className='absolute -top-[80px] -left-[20px] rounded-full bg-white h-40 w-40 z-0'></div>
           </Link>
           <Menu className='text-white cursor-pointer h-7 w-auto' onClick={() => setMobileMenuOpen(true)} />
         </div>

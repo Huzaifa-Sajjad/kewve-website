@@ -50,7 +50,7 @@ function IncreaseSales() {
           </motion.div>
         </div>
         <div className='col-span-2 lg:col-span-1 order-1 lg:order-2'>
-          <div className='bg-pink py-14 px-4 lg:py-20 lg:pl-40 lg:pr-20 rounded-tl-[40px] rounded-tr-[40px] rounded-bl-[40px] rounded-br-[40px] lg:rounded-tl-[200px] lg:rounded-bl-[200px] lg:rounded-tr-none lg:rounded-br-none'>
+          <div className='bg-yellow py-14 px-4 lg:py-20 lg:pl-40 lg:pr-20 rounded-tl-[40px] rounded-tr-[40px] rounded-bl-[40px] rounded-br-[40px] lg:rounded-tl-[200px] lg:rounded-bl-[200px] lg:rounded-tr-none lg:rounded-br-none'>
             <div className='flex flex-col items-center lg:items-start mb-8'>
               <motion.h2
                 initial={{ opacity: 0, y: 50 }}
@@ -73,7 +73,7 @@ function IncreaseSales() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
-              className='bg-dark-pink w-[80%] lg:w-[60%] h-auto rounded-3xl p-6 mx-auto lg:mx-0 mb-8'>
+              className='bg-yellow-dark w-[80%] lg:w-[60%] h-auto rounded-3xl p-6 mx-auto lg:mx-0 mb-8'>
               <Image src='/images/sales.png' alt='World Food' height={350} width={350} className='w-full h-full' />
             </motion.div>
             <div className='flex justify-center lg:justify-start'>

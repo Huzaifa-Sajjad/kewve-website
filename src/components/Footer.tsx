@@ -12,7 +12,9 @@ function Footer() {
     <footer className='pt-10'>
       <div className='spacing container mx-auto flex flex-col'>
         <div>
-          <Image src='/logo-color.png' width={200} height={40} alt='Kewve logo' className='w-auto h-10 mx-auto' />
+          <div className='h-40 w-40 rounded-full bg-white mx-auto flex items-center justify-center'>
+            <Image src='/logo-color.png' width={200} height={40} alt='Kewve logo' className='w-auto h-6 mx-auto' />
+          </div>
         </div>
         <div className='flex flex-col lg:flex-row items-center justify-center gap-x-16 gap-y-3 my-8'>
           <Link href='/terms' className={footerLinkClassName}>
