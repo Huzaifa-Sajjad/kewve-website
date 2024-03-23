@@ -36,8 +36,8 @@ function Header({ needsBackground = false }: HeaderProps) {
             Our Story
           </Link>
           <Link prefetch href='/' className='flex relative'>
-            <Image src='/logo-color.png' width={200} height={24} alt='Kewve logo' className='w-auto h-6 z-50' />
-            <div className='absolute -top-[90px] -right-[23px] rounded-full bg-white h-40 w-40'></div>
+            <Image src='/logo-color.png' width={200} height={32} alt='Kewve logo' className='w-auto h-8 z-50' />
+            <div className='absolute -top-[110px] -right-[28px] rounded-full bg-white h-48 w-52'></div>
           </Link>
           <Link prefetch href='/products' className={headerLinkClassName}>
             Products
@@ -48,10 +48,10 @@ function Header({ needsBackground = false }: HeaderProps) {
         </div>
         <div className='flex relative z-50 overflow-visible lg:hidden justify-between items-center bg-orange py-4 px-4'>
           <Link prefetch href='/' className='flex'>
-            <Image src='/logo-color.png' width={200} height={24} alt='Kewve logo' className='w-auto h-5 z-50' />
-            <div className='absolute -top-[80px] -left-[20px] rounded-full bg-white h-40 w-40 z-0'></div>
+            <Image src='/logo-color.png' width={200} height={28} alt='Kewve logo' className='w-auto h-7 z-50' />
+            <div className='absolute -top-[100px] -left-[20px] rounded-full bg-white h-48 w-48 z-0'></div>
           </Link>
-          <Menu className='text-white cursor-pointer h-7 w-auto' onClick={() => setMobileMenuOpen(true)} />
+          <Menu className='text-white cursor-pointer h-8 w-auto' onClick={() => setMobileMenuOpen(true)} />
         </div>
       </header>
       <Sheet open={mobileMenuOpen} onOpenChange={() => setMobileMenuOpen(false)}>

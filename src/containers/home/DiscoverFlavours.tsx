@@ -2,20 +2,20 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { regalDisplay, josefinRegular, josefinSemiBold, poppinsRegular } from '@/utils';
+import { titleFont, josefinRegular, josefinSemiBold, poppinsRegular } from '@/utils';
 import CTAButtons from '@/containers/CTAButtons';
 
 function DiscoverFlavours() {
   return (
-    <section className='bg-yellow py-10 lg:py-0 lg:-mt-8 xl:-mt-16'>
+    <section className='bg-yellow py-10 lg:py-0 lg:pb-4 lg:-mt-8 xl:-mt-16'>
       <div className='spacing container xl:w-[80%] mx-auto'>
         <div className='flex flex-col items-center mb-4 lg:mb-8 xl:mb-10'>
           <motion.h2
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
-            className={`text-3xl md:text-4xl xl:text-6xl text-black font-bold text-center mb-4 ${regalDisplay.className}`}>
-            Discover Authentic <br /> African Flavours
+            className={`text-3xl md:text-4xl xl:text-6xl text-black font-bold text-center mb-4 ${titleFont.className}`}>
+            Love Africa! Taste Africa!
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 50 }}
@@ -23,18 +23,17 @@ function DiscoverFlavours() {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: 0.1 }}
             className={`text-lg text-black leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${josefinRegular.className}`}>
-            KEWVE platform offers Food & Bev Buyers access to a wide range of authentic African food products directly
-            from the source.
+            Discover the vibrant tapestry of flavours woven throughout Africa with our extensive array of handpicked
+            African culinary delights.
           </motion.p>
         </div>
-        <div className='grid grid-cols-4 gap-4 mb-8 lg:mb-16 xl:mb-24'>
+        <div className='grid grid-cols-4 gap-4 mb-8 lg:mb-16'>
           <div className='col-span-2 xl:col-span-1'>
             <motion.img
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
-              transition={{ delay: 0.2 }}
-              src='/images/products/spice.jpg'
+              src='/images/products/1.jpg'
               alt='Spices from Africa'
               width={640}
               height={400}
@@ -46,8 +45,7 @@ function DiscoverFlavours() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              src='/images/products/snack.webp'
+              src='/images/products/2.png'
               alt='Snacks from Africa'
               width={640}
               height={400}
@@ -59,12 +57,11 @@ function DiscoverFlavours() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.6 }}
-              src='/images/products/drink.jpg'
+              src='/images/products/3.png'
               alt='Drinks from Africa'
               width={640}
               height={400}
-              className='w-full h-[300px] lg:h-[450px] aspect-square object-cover rounded-2xl'
+              className='w-full h-[300px] lg:h-[450px] aspect-square object-cover object-left rounded-2xl'
             />
           </div>
           <div className='col-span-2 xl:col-span-1 mt-8'>
@@ -72,12 +69,11 @@ function DiscoverFlavours() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
-              transition={{ delay: 0.8 }}
-              src='/images/products/sauce.jpg'
+              src='/images/products/4.png'
               alt='Sauces from Africa'
               width={640}
               height={400}
-              className='w-full h-[300px] lg:h-[450px] aspect-square object-cover rounded-2xl'
+              className='w-full h-[300px] lg:h-[450px] aspect-square object-cover object-left rounded-2xl'
             />
           </div>
         </div>
@@ -128,7 +124,7 @@ function DiscoverFlavours() {
             </p>
           </motion.div>
         </div>
-        <div className='flex justify-center'>
+        <div className='flex justify-center mt-8'>
           <CTAButtons />
         </div>
       </div>

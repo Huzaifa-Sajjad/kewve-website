@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { poppinsRegular, josefinSemiBold, regalDisplay, josefinRegular } from '@/utils';
+import { poppinsRegular, josefinSemiBold, titleFont, josefinRegular } from '@/utils';
 import CTAButtons from '@/containers/CTAButtons';
 
 function WorldFoodCategory() {
@@ -16,7 +16,7 @@ function WorldFoodCategory() {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
-                className={`text-3xl md:text-4xl xl:text-6xl text-black font-bold text-center lg:text-left mb-6 ${regalDisplay.className}`}>
+                className={`text-3xl md:text-4xl xl:text-6xl text-black font-bold text-center lg:text-left mb-6 ${titleFont.className}`}>
                 Build Your World <br /> Food Category
               </motion.h2>
               <motion.p
@@ -34,10 +34,10 @@ function WorldFoodCategory() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               className='bg-yellow-dark w-[80%] lg:w-[60%] h-auto rounded-3xl p-6 mx-auto lg:mx-0 mb-8'>
-              <Image src='/images/world_food.png' alt='World Food' height={350} width={350} className='w-full h-full' />
+              <Image src='/images/products/4.png' alt='World Food' height={350} width={350} className='w-full h-full' />
             </motion.div>
             <div className='flex justify-center lg:justify-start'>
-              <CTAButtons />
+              <CTAButtons className='mt-2' />
             </div>
           </div>
         </div>

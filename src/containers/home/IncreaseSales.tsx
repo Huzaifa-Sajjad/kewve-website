@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { poppinsRegular, josefinSemiBold, regalDisplay, josefinRegular } from '@/utils';
+import { poppinsRegular, josefinSemiBold, titleFont, josefinRegular } from '@/utils';
 import CTAButtons from '@/containers/CTAButtons';
 
 function IncreaseSales() {
@@ -25,8 +25,8 @@ function IncreaseSales() {
             <h3 className={`text-xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>Sales Growth</h3>
             <p
               className={`tex-sm lg:text-base text-black max-w-full lg:max-w-[55ch] leading-relaxed ${poppinsRegular.className}`}>
-              Take a bite of a $3.2 billion market by integrating distinctive African products to your world food
-              category.
+              Explore a lucrative market expansion strategy with KEWVE&apos;s unique African product integration,
+              connecting African suppliers to global buyers for increased sales and market reach.
             </p>
           </motion.div>
           <motion.div
@@ -56,7 +56,7 @@ function IncreaseSales() {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
-                className={`text-3xl md:text-4xl xl:text-6xl text-black font-bold text-center lg:text-left mb-6 ${regalDisplay.className}`}>
+                className={`text-3xl md:text-4xl xl:text-6xl text-black font-bold text-center lg:text-left mb-6 ${titleFont.className}`}>
                 Increase Your Sales
               </motion.h2>
               <motion.p
@@ -77,7 +77,7 @@ function IncreaseSales() {
               <Image src='/images/sales.png' alt='World Food' height={350} width={350} className='w-full h-full' />
             </motion.div>
             <div className='flex justify-center lg:justify-start'>
-              <CTAButtons />
+              <CTAButtons className='mt-2' />
             </div>
           </div>
         </div>

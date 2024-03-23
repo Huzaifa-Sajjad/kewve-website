@@ -1,8 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { poppinsRegular, josefinSemiBold, regalDisplay, josefinRegular } from '@/utils';
+import { titleFont, josefinRegular } from '@/utils';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CTAButtons from '@/containers/CTAButtons';
@@ -11,13 +10,13 @@ function OurStory() {
   return (
     <>
       <Header />
-      <section className='landing-hero relative flex flex-col items-center py-16 overflow-x-hidden'>
+      <section className='landing-hero relative flex flex-col items-center py-16 lg:pt-24 overflow-x-hidden'>
         <div className='container spacing mx-auto'>
           <motion.p
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className={`${regalDisplay.className} block text-4xl lg:text-5xl xl:text-6xl font-bold text-white text-center max-w-full md:max-w-[30ch] mx-auto lg:mt-16`}>
+            className={`${titleFont.className} block text-4xl lg:text-5xl xl:text-6xl font-bold text-white text-center max-w-full md:max-w-[30ch] mx-auto lg:mt-16`}>
             Kewve is your gateway to a delightful world of African flavours, connecting premium African food brands with
             international buyers.
           </motion.p>
@@ -39,7 +38,7 @@ function OurStory() {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
-                className={`text-3xl md:text-4xl xl:text-5xl font-bold text-black mb-4 text-center lg:text-left ${regalDisplay.className}`}>
+                className={`text-3xl md:text-4xl xl:text-5xl font-bold text-black mb-4 text-center lg:text-left ${titleFont.className}`}>
                 Our Story
               </motion.h2>
               <motion.p
@@ -60,7 +59,7 @@ function OurStory() {
                 Kewve makes it easy for buyers around the world to discover and enjoy African food, bringing a taste of
                 the African to your home.
               </motion.p>
-              <CTAButtons />
+              <CTAButtons className='mt-6' />
             </div>
             <div className='col-span-2 lg:col-span-1 order-1 lg:order-2'>
               <div className='relative'>
@@ -88,7 +87,7 @@ function OurStory() {
                   initial={{ translateX: 0, rotate: 0, opacity: 0 }}
                   whileInView={{ translateX: '-56px', rotate: '-12deg', opacity: 1 }}
                   viewport={{ once: true, amount: 0.8 }}
-                  src='/images/products/spice.jpg'
+                  src='/images/products/3.png'
                   alt='Miri Piri'
                   width={600}
                   height={400}

@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { josefinRegular, poppinsRegular, josefinSemiBold, regalDisplay } from '@/utils';
+import { josefinRegular, poppinsRegular, josefinSemiBold, titleFont } from '@/utils';
 import CTAButtons from '@/containers/CTAButtons';
 
 function SimplifySourcing() {
@@ -14,7 +14,7 @@ function SimplifySourcing() {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
-            className={`text-3xl md:text-4xl xl:text-6xl text-center text-black font-bold mb-6 ${regalDisplay.className}`}>
+            className={`text-3xl md:text-4xl xl:text-6xl text-center text-black font-bold mb-6 ${titleFont.className}`}>
             Simplify Your <br />
             Sourcing Process
           </motion.h2>
@@ -93,7 +93,7 @@ function SimplifySourcing() {
                 suppliers.
               </p>
             </motion.div>
-            <div className='flex justify-center lg:justify-start'>
+            <div className='flex justify-center lg:justify-start mt-8'>
               <CTAButtons />
             </div>
           </div>

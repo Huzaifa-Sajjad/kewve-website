@@ -2,15 +2,10 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { regalDisplay } from '@/utils';
 import ProductCard from '@/components/ProductCard';
 import { PopupButton } from '@typeform/embed-react';
-import { Poppins, Josefin_Sans, Permanent_Marker } from 'next/font/google';
+import { titleFont, poppinsRegular, josefinSemiBold } from '@/utils/fonts';
 import type { ProductDocument, ProductDocumentData } from '../../prismicio-types';
-
-const poppinsRegular = Poppins({ weight: '400', subsets: ['latin'] });
-const josefinSemiBold = Josefin_Sans({ weight: '600', subsets: ['latin'] });
-const marker = Permanent_Marker({ weight: '400', subsets: ['latin'] });
 
 interface ProductDetailProps {
   id: string;
@@ -21,21 +16,21 @@ interface ProductDetailProps {
 function ProductDetail({ id, product, products }: ProductDetailProps) {
   return (
     <>
-      <section className='relative bg-orange pt-16 pb-10 lg:pt-32 lg:pb-0'>
+      <section className='relative bg-orange pt-16 pb-10 lg:pt-40 lg:pb-6'>
         <div className='spacing lg:max-w-[80%] xl:max-w-[65%] lg:mx-auto'>
           <div className='grid grid-cols-2 gap-x-4 gap-y-8 items-center'>
             <div className='col-span-2 lg:col-span-1 order-2 lg:order-1'>
               <motion.h1
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
-                className={`text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white text-center lg:text-left mb-4 ${regalDisplay.className}`}>
+                className={`text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white text-center lg:text-left ${titleFont.className}`}>
                 {product.name}
               </motion.h1>
               <motion.h6
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
-                className={`${josefinSemiBold.className} text-xl text-center lg:text-left text-white mb-4`}>
+                className={`${josefinSemiBold.className} text-xl text-center lg:text-left text-white mt-6 mb-4`}>
                 Minimum Order Quantity: {product.moq}
               </motion.h6>
               <motion.p
@@ -83,7 +78,7 @@ function ProductDetail({ id, product, products }: ProductDetailProps) {
           <div className='spacing container xl:w-[80%] mx-auto'>
             <div className='flex flex-col items-center mb-8 xl:mb-12'>
               <h2
-                className={`text-2xl md:text-3xl xl:text-4xl text-black font-bold text-center mb-4 ${regalDisplay.className}`}>
+                className={`text-2xl md:text-3xl xl:text-4xl text-black font-bold text-center mb-4 ${titleFont.className}`}>
                 Recommended Products For You
               </h2>
             </div>

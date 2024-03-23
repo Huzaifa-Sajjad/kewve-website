@@ -1,11 +1,10 @@
 'use client';
 import Image from 'next/image';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { josefinRegular } from '@/utils';
-import { titleFont, regalDisplay, josefinSemiBold, getRandomColor } from '@/utils';
+import { titleFont, josefinRegular, getRandomColor } from '@/utils';
 import { InfiniteMovingCards } from '@/components/ui/InfiniteMovingCards';
 import { ProductDocument } from '../../../prismicio-types';
+import CTAButtons from '@/containers/CTAButtons';
 
 interface HeroSectionProps {
   items: ProductDocument[];
@@ -13,29 +12,32 @@ interface HeroSectionProps {
 
 function HeroSection({ items }: HeroSectionProps) {
   return (
-    <section className='landing-hero relative min-h-[100vh] flex flex-col items-center pt-16 pb-10 lg:pt-40 lg:pb-0 overflow-x-hidden'>
-      <div className='spacing relative z-10'>
+    <section className='landing-hero relative min-h-[100vh] flex flex-col items-center pt-16 pb-10 lg:pt-40 lg:pb-6 overflow-x-hidden'>
+      <div className='spacing relative z-10 mb-10'>
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          className={`text-7xl lg:text-9xl xl:text-[156px] text-white text-center tracking-wide text-with-shadow ${titleFont.className}`}>
-          Love Africa
+          className={`text-4xl sm:text-5xl md:text-text-7xl lg:text-8xl text-white text-center tracking-wide text-with-shadow ${titleFont.className}`}>
+          Discover Authentic
         </motion.h2>
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className={`text-6xl lg:text-8xl xl:text-[136px] text-white text-center tracking-wide text-with-shadow ${titleFont.className}`}>
-          Taste Africa
+          className={`text-4xl sm:text-5xl md:text-text-7xl lg:text-8xl text-white text-center tracking-wide text-with-shadow ${titleFont.className}`}>
+          African Products
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className={`text-[20px] lg:text-[22px] text-white text-center max-w-[60ch] mx-auto mt-6 mb-8 lg:mb-10 ${josefinRegular.className}`}>
-          Discover the vibrant tapestry of flavours woven throughout Africa with our extensive array of handpicked
-          African culinary delights.
+          className={`text-base sm:text-lg lg:text-[22px] text-white text-center max-w-[60ch] mx-auto my-6 ${josefinRegular.className}`}>
+          KEWVE offers Food & Bev Buyers access to a wide range of authentic African food products directly from the
+          source.
         </motion.p>
+        <div className='flex justify-center'>
+          <CTAButtons className='mt-0' />
+        </div>
       </div>
       <InfiniteMovingCards>
         <>
@@ -59,16 +61,9 @@ function HeroSection({ items }: HeroSectionProps) {
                 </div>
                 <div className='relative z-20 flex mt-6 flex-col items-center'>
                   <h4
-                    className={`${regalDisplay.className} text-xl text-black font-bold tracking-wide text-center uppercase mb-4`}>
+                    className={`${titleFont.className} text-xl text-black font-bold tracking-wide text-center uppercase`}>
                     {item.data.name}
                   </h4>
-                  <Link
-                    prefetch
-                    href={`/products/${item.uid}`}
-                    className={`rounded-full py-3 px-10 text-lg text-black tracking-wide ${josefinSemiBold.className}`}
-                    style={{ backgroundColor: color }}>
-                    Know More
-                  </Link>
                 </div>
               </div>
             );

@@ -2,12 +2,9 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Josefin_Sans } from 'next/font/google';
-import { formatCurrency, getRandomColor, regalDisplay } from '@/utils';
+import { getRandomColor, titleFont, josefinSemiBold } from '@/utils';
 import type { ProductDocumentData } from '../../prismicio-types';
 import Link from 'next/link';
-
-const josefinSemiBold = Josefin_Sans({ weight: '600', subsets: ['latin'] });
 
 interface ProductCardProps {
   id: string;
@@ -42,7 +39,7 @@ function ProductCard({ id, product }: ProductCardProps) {
         className='w-3/4 h-auto aspect-square object-contain mx-auto'
       />
       <div className='relative z-20 mt-6 flex flex-col items-center justify-center'>
-        <h4 className={`${regalDisplay.className} text-xl font-bold text-black text-center uppercase mb-4`}>
+        <h4 className={`${titleFont.className} text-xl font-bold text-black text-center uppercase mb-4`}>
           {product.name}
         </h4>
         <Link

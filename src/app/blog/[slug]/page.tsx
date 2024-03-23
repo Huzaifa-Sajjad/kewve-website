@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { PrismicRichText } from '@prismicio/react';
-import { regalDisplay, poppinsRegular } from '@/utils';
+import { titleFont, poppinsRegular } from '@/utils';
 
 export default async function Blog({ params }: any) {
   const client = createClient();
@@ -20,7 +20,7 @@ export default async function Blog({ params }: any) {
       <section className='landing-hero relative flex flex-col items-center pt-20 pb-6 lg:py-40 lg:pb-0 overflow-x-hidden'>
         <div className='container spacing mx-auto'>
           <h1
-            className={`text-3xl md:text-4xl xl:text-6xl font-bold text-white text-center mb-4 max-w-full md:max-w-[24ch] mx-auto ${regalDisplay.className}`}>
+            className={`text-3xl md:text-4xl xl:text-6xl font-bold text-white text-center mb-4 max-w-full md:max-w-[24ch] mx-auto ${titleFont.className}`}>
             {blog.data.title}
           </h1>
           <p

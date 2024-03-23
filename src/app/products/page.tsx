@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import { createClient } from '@/prismicio';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { josefinRegular, josefinSemiBold, regalDisplay } from '@/utils';
+import { josefinRegular, josefinSemiBold, titleFont } from '@/utils';
 import Link from 'next/link';
 import Image from 'next/image';
 import ProductCard from '@/components/ProductCard';
@@ -47,10 +47,10 @@ export default async function Products({ searchParams }: any) {
   return (
     <>
       <Header />
-      <section className='landing-hero relative flex flex-col items-center py-16 overflow-x-hidden'>
+      <section className='landing-hero relative flex flex-col items-center py-16 lg:pt-24 overflow-x-hidden'>
         <div className='container spacing mx-auto lg:mt-16'>
           <h1
-            className={`text-3xl md:text-4xl xl:text-6xl font-bold text-white text-center mb-4 ${regalDisplay.className}`}>
+            className={`text-3xl md:text-4xl xl:text-6xl font-bold text-white text-center mb-4 ${titleFont.className}`}>
             Discover Authentic <br /> African Flavours
           </h1>
           <p

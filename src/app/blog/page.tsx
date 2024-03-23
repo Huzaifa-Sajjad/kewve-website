@@ -2,7 +2,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { createClient } from '@/prismicio';
 
-import { josefinRegular, regalDisplay } from '@/utils';
+import { josefinRegular, titleFont } from '@/utils';
 import { BlogPostDocumentData } from '../../../prismicio-types';
 import BlogCard from '@/components/BlogCard';
 
@@ -28,7 +28,7 @@ export default async function Blogs() {
       <section className='landing-hero relative flex flex-col items-center py-16 lg:pt-40 lg:pb-0 overflow-x-hidden'>
         <div className='container spacing mx-auto'>
           <h1
-            className={`text-3xl md:text-4xl xl:text-6xl font-bold text-white text-center mb-4 ${regalDisplay.className}`}>
+            className={`text-3xl md:text-4xl xl:text-6xl font-bold text-white text-center mb-4 ${titleFont.className}`}>
             African Connections
           </h1>
           <p

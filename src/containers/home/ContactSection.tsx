@@ -10,7 +10,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
 import { formSubmissionAction } from '@/actions';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { regalDisplay, josefinRegular, josefinSemiBold } from '@/utils';
+import { titleFont, josefinRegular, josefinSemiBold } from '@/utils';
 import { redirect } from 'next/navigation';
 
 function ContactSection() {
@@ -31,14 +31,14 @@ function ContactSection() {
   }, [state]);
 
   return (
-    <section className='bg-yellow py-10 lg:pt-0 lg:-mt-8 xl:-mt-16'>
+    <section className='bg-yellow py-10 lg:pt-0 lg:pb-4 lg:-mt-8 xl:-mt-16'>
       <div className='spacing container xl:w-[80%] mx-auto'>
         <div className='flex flex-col items-center mb-4 lg:mb-8 xl:mb-14'>
           <motion.h2
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
-            className={`text-3xl md:text-4xl xl:text-6xl text-black font-bold text-center mb-4 ${regalDisplay.className}`}>
+            className={`text-3xl md:text-4xl xl:text-6xl text-black font-bold text-center mb-4 ${titleFont.className}`}>
             Connect with Us
           </motion.h2>
           <motion.p
@@ -58,11 +58,15 @@ function ContactSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               className='mb-6 xl:mb-10 text-center lg:text-left'>
-              <Image src='/images/phone.svg' alt='Save Time' width={36} height={36} className='mb-4 mx-auto lg:mx-0' />
-              <a
-                href='tel:+441234567000'
-                className={`text-xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
-                +44 123 4567 000
+              <a href='tel:+353873636781'>
+                <Image
+                  src='/images/phone.svg'
+                  alt='Save Time'
+                  width={36}
+                  height={36}
+                  className='mb-4 mx-auto lg:mx-0'
+                />
+                <span className={`text-xl text-black leading-tight ${josefinSemiBold.className}`}>+353 873 636781</span>
               </a>
             </motion.div>
             <motion.div
@@ -70,11 +74,15 @@ function ContactSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               className='mb-6 xl:mb-10 text-center lg:text-left'>
-              <Image src='/images/mail.svg' alt='Save Time' width={36} height={36} className='mb-4 mx-auto lg:mx-0' />
-              <a
-                href='mailto:hello@kewve.com'
-                className={`text-xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
-                hello@kewve.com
+              <a href=' https://www.instagram.com/its_kewve/' target='_blank'>
+                <Image
+                  src='/images/insta.svg'
+                  alt='Save Time'
+                  width={36}
+                  height={36}
+                  className='mb-4 mx-auto lg:mx-0'
+                />
+                <span className={`text-xl text-black leading-tight ${josefinSemiBold.className}`}>Instagram</span>
               </a>
             </motion.div>
             <motion.div
@@ -82,24 +90,22 @@ function ContactSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               className='text-center lg:text-left'>
-              <Image
-                src='/images/address.svg'
-                alt='Save Time'
-                width={36}
-                height={36}
-                className='mb-4 mx-auto lg:mx-0'
-              />
-              <a
-                href='tel:+441234567000'
-                className={`text-xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
-                Lane 3, Covt heights, Ireland
+              <a href=' https://www.instagram.com/its_kewve/' target='_blank'>
+                <Image
+                  src='/images/linkedin.svg'
+                  alt='Save Time'
+                  width={36}
+                  height={36}
+                  className='mb-4 mx-auto lg:mx-0'
+                />
+                <span className={`text-xl text-black leading-tight ${josefinSemiBold.className}`}>Linkedin</span>
               </a>
             </motion.div>
           </div>
           <div className='col-span-6 lg:col-span-4 mt-6 lg:mt-0'>
             <form action={action} className='grid grid-cols-4 gap-4'>
               <div className='col-span-4'>
-                <h4 className={`text-lg text-black mb-1 ${regalDisplay.className}`}>I am interested as?</h4>
+                <h4 className={`text-lg text-black mb-1 ${titleFont.className}`}>I am interested as?</h4>
                 <RadioGroup name='account_type' defaultValue='buyer' required>
                   <div className='flex flex-wrap gap-4'>
                     <div className='flex flex-shrink-0 items-center space-x-2 cursor-pointer'>
