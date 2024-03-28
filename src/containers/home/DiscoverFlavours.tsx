@@ -22,7 +22,7 @@ function DiscoverFlavours() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: 0.1 }}
-            className={`text-lg text-black leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${josefinRegular.className}`}>
+            className={`text-lg lg:text-xl text-black leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${josefinRegular.className}`}>
             Discover the vibrant tapestry of flavours woven throughout Africa with our extensive array of handpicked
             African culinary delights.
           </motion.p>
@@ -90,8 +90,10 @@ function DiscoverFlavours() {
               height={64}
               className='mb-4 mx-auto'
             />
-            <h3 className={`text-xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>Direct Access</h3>
-            <p className={`tex-sm lg:text-base text-black leading-relaxed ${poppinsRegular.className}`}>
+            <h3 className={`text-xl lg:text-2xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
+              Direct Access
+            </h3>
+            <p className={`tex-base lg:text-lg text-black leading-relaxed ${poppinsRegular.className}`}>
               Say goodbye to middlemen and enjoy a diverse selection of African food.
             </p>
           </motion.div>
@@ -107,8 +109,10 @@ function DiscoverFlavours() {
               height={64}
               className='mb-4 mx-auto'
             />
-            <h3 className={`text-xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>Direct Sourcing</h3>
-            <p className={`tex-sm lg:text-base text-black leading-relaxed ${poppinsRegular.className}`}>
+            <h3 className={`text-xl lg:text-2xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
+              Direct Sourcing
+            </h3>
+            <p className={`tex-base lg:text-lg text-black leading-relaxed ${poppinsRegular.className}`}>
               Bid farewell to unnecessary intermediaries, and embrace a direct connection with trusted suppliers.
             </p>
           </motion.div>
@@ -118,8 +122,10 @@ function DiscoverFlavours() {
             viewport={{ once: true, amount: 0.5 }}
             className='col-span-4 lg:col-span-1 text-center'>
             <Image src='/images/easy_access.svg' alt='Easy Access' width={64} height={64} className='mb-4 mx-auto' />
-            <h3 className={`text-xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>Easy Access</h3>
-            <p className={`tex-sm lg:text-base text-black leading-relaxed ${poppinsRegular.className}`}>
+            <h3 className={`text-xl lg:text-2xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
+              Easy Access
+            </h3>
+            <p className={`tex-base lg:text-lg text-black leading-relaxed ${poppinsRegular.className}`}>
               We make sourcing African food and drink brands as easy as it should be.
             </p>
           </motion.div>

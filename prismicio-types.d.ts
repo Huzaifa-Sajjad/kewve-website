@@ -207,7 +207,17 @@ interface ProductDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  category: prismic.SelectField<"Chips" | "Snacks">;
+  category: prismic.SelectField<
+    | "Grains, Cereals, and Flour"
+    | "Confectionery and Snacks"
+    | "Spices, Seasonings, and Sauces"
+    | "Beverages"
+    | "Nuts, Seeds, and Specialty Foods"
+    | "Processed Meats and Canned Foods"
+    | "Pulses, Legumes"
+    | "Cooking Oils and Fats"
+    | "Health & Wellbeing Products"
+  >;
 
   /**
    * price field in *Product*

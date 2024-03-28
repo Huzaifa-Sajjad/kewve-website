@@ -54,7 +54,7 @@ export default async function Products({ searchParams }: any) {
             Discover Authentic <br /> African Flavours
           </h1>
           <p
-            className={`text-base md:text-lg text-white leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${josefinRegular.className}`}>
+            className={`text-lg lg:text-xl text-white leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${josefinRegular.className}`}>
             Delve into the heart of African culinary heritage with our platform, offering unparalleled access to an
             extensive selection of authentic food products sourced directly from the continent.
           </p>

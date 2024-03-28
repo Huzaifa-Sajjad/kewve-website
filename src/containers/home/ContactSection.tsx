@@ -46,7 +46,7 @@ function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: 0.1 }}
-            className={`text-lg text-black leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${josefinRegular.className}`}>
+            className={`text-lg lg:text-xl text-black leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${josefinRegular.className}`}>
             Reach out to us and unlock the gateway to seamless communication and unparalleled assistance. Our dedicated
             team stands ready to address your queries, provide guidance, and foster meaningful connections.
           </motion.p>

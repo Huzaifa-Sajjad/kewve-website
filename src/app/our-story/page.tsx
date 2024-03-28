@@ -46,7 +46,7 @@ function OurStory() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ delay: 0.1 }}
-                className={`text-base md:text-lg text-black leading-normal max-w-full lg:max-w-[45ch] mb-6 text-center lg:text-left mx-auto lg:mx-0 ${josefinRegular.className}`}>
+                className={`text-lg lg:text-xl text-black leading-normal max-w-full lg:max-w-[45ch] mb-6 text-center lg:text-left mx-auto lg:mx-0 ${josefinRegular.className}`}>
                 Our user-friendly platform streamlines the entire process, making it easy for buyers to explore and
                 purchase a rich variety of authentic African food products.
               </motion.p>
@@ -55,7 +55,7 @@ function OurStory() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ delay: 0.1 }}
-                className={`text-base md:text-lg text-black leading-normal max-w-full lg:max-w-[45ch] text-center lg:text-left mx-auto lg:mx-0 ${josefinRegular.className}`}>
+                className={`text-lg lg:text-xl text-black leading-normal max-w-full lg:max-w-[45ch] text-center lg:text-left mx-auto lg:mx-0 ${josefinRegular.className}`}>
                 Kewve makes it easy for buyers around the world to discover and enjoy African food, bringing a taste of
                 the African to your home.
               </motion.p>
