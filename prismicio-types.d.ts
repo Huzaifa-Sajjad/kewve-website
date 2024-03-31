@@ -208,15 +208,12 @@ interface ProductDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   category: prismic.SelectField<
-    | "Grains, Cereals, and Flour"
-    | "Confectionery and Snacks"
-    | "Spices, Seasonings, and Sauces"
+    | "Prepared Foods"
+    | "Ambient Food"
+    | "Dry Ingredients"
     | "Beverages"
-    | "Nuts, Seeds, and Specialty Foods"
-    | "Processed Meats and Canned Foods"
-    | "Pulses, Legumes"
-    | "Cooking Oils and Fats"
     | "Health & Wellbeing Products"
+    | "Kitchen Essentials"
   >;
 
   /**

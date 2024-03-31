@@ -13,7 +13,16 @@ export const revalidate = 0;
 export default async function Products({ searchParams }: any) {
   const params = new URLSearchParams(searchParams);
   const selectedBrand = params.get('brand') || 'all';
+  const selectedCategory = params.get('category') || '';
   const client = createClient();
+  const productCategories = [
+    'Prepared Foods',
+    'Ambient Food',
+    'Dry Ingredients',
+    'Beverages',
+    'Health & Wellbeing Products',
+    'Kitchen Essentials',
+  ];
 
   const products = await client.getAllByType('product', {
     fetchOptions: {
@@ -38,6 +47,11 @@ export default async function Products({ searchParams }: any) {
     if (selectedBrand && selectedBrand !== 'all') {
       //@ts-ignore
       const filteredProducts = products.filter((product) => product.data.brand.uid === selectedBrand);
+      return filteredProducts;
+    }
+
+    if (selectedCategory) {
+      const filteredProducts = products.filter((product) => product.data.category === selectedCategory);
       return filteredProducts;
     }
 
@@ -73,29 +87,52 @@ export default async function Products({ searchParams }: any) {
           <div className='grid grid-cols-12 gap-4 xl:gap-6'>
             <div className='col-span-12 md:col-span-3 xl:col-span-2 md:border-r md:border-gray-200'>
               <aside>
-                <h3 className={`text-xl font-bold text-black text-left mb-4 xl:mb-6 ${josefinSemiBold.className}`}>
-                  Filter by Brand
-                </h3>
-                <RadioGroup defaultValue={selectedBrand} value={selectedBrand}>
-                  {brands.map((brand) => (
-                    <Link
-                      href={`?brand=${brand.uid}`}
-                      key={brand.uid}
-                      scroll={false}
-                      className='flex flex-shrink-0 items-center space-x-4 mb-4 cursor-pointer'>
-                      <RadioGroupItem value={brand.uid} id={brand.uid} />
-                      <Label htmlFor={brand.uid}>{brand.data.name}</Label>
-                    </Link>
-                  ))}
-                  <Link
-                    href='/products'
-                    key='All Brands'
-                    scroll={false}
-                    className='flex items-center space-x-4 cursor-pointer'>
-                    <RadioGroupItem value='all' id='all-brands' />
-                    <Label htmlFor='all brands'>All Brands</Label>
-                  </Link>
-                </RadioGroup>
+                <div className='mb-8'>
+                  <h3 className={`text-xl font-bold text-black text-left mb-4 xl:mb-6 ${josefinSemiBold.className}`}>
+                    Filter by Brand
+                  </h3>
+                  <div className='max-h-[500px] overflow-scroll'>
+                    <RadioGroup defaultValue={selectedBrand} value={selectedBrand}>
+                      <Link
+                        href='/products'
+                        key='All Brands'
+                        scroll={false}
+                        className='flex items-center space-x-4 mb-4 cursor-pointer'>
+                        <RadioGroupItem value='all' id='all-brands' />
+                        <Label htmlFor='all brands'>All Brands</Label>
+                      </Link>
+                      {brands.map((brand) => (
+                        <Link
+                          href={`?brand=${brand.uid}`}
+                          key={brand.uid}
+                          scroll={false}
+                          className='flex flex-shrink-0 items-center space-x-4 mb-4 cursor-pointer'>
+                          <RadioGroupItem value={brand.uid} id={brand.uid} />
+                          <Label htmlFor={brand.uid}>{brand.data.name}</Label>
+                        </Link>
+                      ))}
+                    </RadioGroup>
+                  </div>
+                </div>
+                <div>
+                  <h3 className={`text-xl font-bold text-black text-left mb-4 xl:mb-6 ${josefinSemiBold.className}`}>
+                    Filter by Category
+                  </h3>
+                  <div className='max-h-[500px] overflow-scroll'>
+                    <RadioGroup defaultValue={selectedCategory} value={selectedCategory}>
+                      {productCategories.map((category) => (
+                        <Link
+                          href={`?category=${category}`}
+                          key={category}
+                          scroll={false}
+                          className='flex flex-shrink-0 items-center space-x-4 mb-4 cursor-pointer'>
+                          <RadioGroupItem value={category} id={category} />
+                          <Label htmlFor={category}>{category}</Label>
+                        </Link>
+                      ))}
+                    </RadioGroup>
+                  </div>
+                </div>
               </aside>
             </div>
             <div className='col-span-12 md:col-span-9 xl:col-span-10'>
