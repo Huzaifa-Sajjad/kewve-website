@@ -32,7 +32,7 @@ export default async function Blogs() {
             African Connections
           </h1>
           <p
-            className={`text-lg lg:text-xl text-white leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${josefinRegular.className}`}>
+            className={`text-lg lg:text-2xl text-white leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${josefinRegular.className}`}>
             Discover and connect with African food brands and suppliers effortlessly. Explore authentic ingredients and
             products, fostering culinary partnerships and celebrating the richness of African cuisine.
           </p>

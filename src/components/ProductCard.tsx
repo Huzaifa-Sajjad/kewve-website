@@ -1,10 +1,10 @@
 'use client';
-
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { getRandomColor, titleFont, josefinSemiBold } from '@/utils';
-import type { ProductDocumentData } from '../../prismicio-types';
 import Link from 'next/link';
+import Image from 'next/image';
+import { getRandomColor, titleFont } from '@/utils';
+import type { ProductDocumentData } from '../../prismicio-types';
+
+import { useRouter } from 'next/navigation';
 
 interface ProductCardProps {
   id: string;
@@ -13,24 +13,17 @@ interface ProductCardProps {
 
 function ProductCard({ id, product }: ProductCardProps) {
   const color = getRandomColor();
+  const router = useRouter();
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: 'easeInOut' }}
-      viewport={{ once: true }}
-      className='relative h-full w-full rounded-lg flex-shrink-0 px-8 py-6'
+    <Link
+      prefetch
+      href={`/products/${id}`}
+      key={product.name}
+      className='block relative h-full w-full rounded-lg flex-shrink-0 px-8 py-6 cursor-pointer'
       style={{
         background: `linear-gradient(to bottom, #fafaf0 35%, ${color} 35%, ${color} 100%)`,
-      }}
-      key={product.name}>
-      <div
-        className='absolute top-0 right-0 h-20 w-20 flex flex-col items-center justify-center rounded-full'
-        style={{ backgroundColor: color }}>
-        <span className={`text-sm text-black-muted ${josefinSemiBold.className}`}>MOQ</span>
-        <span className={`text-sm text-black-muted ${josefinSemiBold.className}`}>{product.moq}</span>
-      </div>
+      }}>
       <Image
         src={product.image?.url ?? ''}
         width={product.image?.dimensions?.width ?? 600}
@@ -42,14 +35,8 @@ function ProductCard({ id, product }: ProductCardProps) {
         <h4 className={`${titleFont.className} text-xl font-bold text-black text-center uppercase mb-4`}>
           {product.name}
         </h4>
-        <Link
-          href={`/products/${id}`}
-          prefetch
-          className={`bg-orange rounded-full py-3 px-10 text-lg text-white shadow-lg tracking-wide ${josefinSemiBold.className}`}>
-          Know More
-        </Link>
       </div>
-    </motion.div>
+    </Link>
   );
 }
 

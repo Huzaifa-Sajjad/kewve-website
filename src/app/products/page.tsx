@@ -68,7 +68,7 @@ export default async function Products({ searchParams }: any) {
             Discover Authentic <br /> African Flavours
           </h1>
           <p
-            className={`text-lg lg:text-xl text-white leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${josefinRegular.className}`}>
+            className={`text-xl lg:text-2xl text-white leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${josefinRegular.className}`}>
             Delve into the heart of African culinary heritage with our platform, offering unparalleled access to an
             extensive selection of authentic food products sourced directly from the continent.
           </p>
@@ -87,34 +87,7 @@ export default async function Products({ searchParams }: any) {
           <div className='grid grid-cols-12 gap-4 xl:gap-6'>
             <div className='col-span-12 md:col-span-3 xl:col-span-2 md:border-r md:border-gray-200'>
               <aside>
-                <div className='mb-8'>
-                  <h3 className={`text-xl font-bold text-black text-left mb-4 xl:mb-6 ${josefinSemiBold.className}`}>
-                    Filter by Brand
-                  </h3>
-                  <div className='max-h-[500px] overflow-scroll'>
-                    <RadioGroup defaultValue={selectedBrand} value={selectedBrand}>
-                      <Link
-                        href='/products'
-                        key='All Brands'
-                        scroll={false}
-                        className='flex items-center space-x-4 mb-4 cursor-pointer'>
-                        <RadioGroupItem value='all' id='all-brands' />
-                        <Label htmlFor='all brands'>All Brands</Label>
-                      </Link>
-                      {brands.map((brand) => (
-                        <Link
-                          href={`?brand=${brand.uid}`}
-                          key={brand.uid}
-                          scroll={false}
-                          className='flex flex-shrink-0 items-center space-x-4 mb-4 cursor-pointer'>
-                          <RadioGroupItem value={brand.uid} id={brand.uid} />
-                          <Label htmlFor={brand.uid}>{brand.data.name}</Label>
-                        </Link>
-                      ))}
-                    </RadioGroup>
-                  </div>
-                </div>
-                <div>
+                <div className='mb-6'>
                   <h3 className={`text-xl font-bold text-black text-left mb-4 xl:mb-6 ${josefinSemiBold.className}`}>
                     Filter by Category
                   </h3>
@@ -132,6 +105,31 @@ export default async function Products({ searchParams }: any) {
                       ))}
                     </RadioGroup>
                   </div>
+                </div>
+                <h3 className={`text-xl font-bold text-black text-left mb-4 xl:mb-6 ${josefinSemiBold.className}`}>
+                  Filter by Brand
+                </h3>
+                <div className='max-h-[500px] overflow-scroll'>
+                  <RadioGroup defaultValue={selectedBrand} value={selectedBrand}>
+                    <Link
+                      href='/products'
+                      key='All Brands'
+                      scroll={false}
+                      className='flex items-center space-x-4 mb-4 cursor-pointer'>
+                      <RadioGroupItem value='all' id='all-brands' />
+                      <Label htmlFor='all brands'>All Brands</Label>
+                    </Link>
+                    {brands.map((brand) => (
+                      <Link
+                        href={`?brand=${brand.uid}`}
+                        key={brand.uid}
+                        scroll={false}
+                        className='flex flex-shrink-0 items-center space-x-4 mb-4 cursor-pointer'>
+                        <RadioGroupItem value={brand.uid} id={brand.uid} />
+                        <Label htmlFor={brand.uid}>{brand.data.name}</Label>
+                      </Link>
+                    ))}
+                  </RadioGroup>
                 </div>
               </aside>
             </div>
@@ -153,7 +151,7 @@ export default async function Products({ searchParams }: any) {
                       className='mx-auto mb-4 lg:mb-8'
                     />
                     <h3 className={`text-xl font-bold text-black text-left mb-4 ${josefinSemiBold.className}`}>
-                      No products found for the selected brand
+                      No results found
                     </h3>
                     <Link
                       href='/products'

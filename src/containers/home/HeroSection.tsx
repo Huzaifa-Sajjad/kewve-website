@@ -31,7 +31,7 @@ function HeroSection({ items }: HeroSectionProps) {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className={`text-base sm:text-lg lg:text-[22px] text-white text-center max-w-[60ch] mx-auto my-6 ${josefinRegular.className}`}>
+          className={`text-xl lg:text-2xl text-white text-center max-w-[60ch] mx-auto my-6 ${josefinRegular.className}`}>
           KEWVE offers Food & Bev Buyers access to a wide range of authentic African food products directly from the
           source.
         </motion.p>

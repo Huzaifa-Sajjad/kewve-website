@@ -2,10 +2,19 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useFormState } from 'react-dom';
+import { useFormStatus } from 'react-dom';
+import { redirect } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 import ProductCard from '@/components/ProductCard';
-import { PopupButton } from '@typeform/embed-react';
-import { titleFont, poppinsRegular, josefinSemiBold } from '@/utils/fonts';
+import { useToast } from '@/components/ui/use-toast';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { titleFont, poppinsRegular, josefinSemiBold, josefinRegular } from '@/utils/fonts';
 import type { ProductDocument, ProductDocumentData } from '../../prismicio-types';
+import { productInquiryAction } from '@/actions';
 
 interface ProductDetailProps {
   id: string;
@@ -14,6 +23,31 @@ interface ProductDetailProps {
 }
 
 function ProductDetail({ id, product, products }: ProductDetailProps) {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const { toast } = useToast();
+  const { pending } = useFormStatus();
+  const [state, action] = useFormState(productInquiryAction.bind(null, product.name as string), {
+    message: '',
+    error: false,
+    submitted: false,
+  });
+
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
+  useEffect(() => {
+    if (state.submitted && state.error) {
+      toast({ title: 'Bummer! something is not ring', description: state.message, variant: 'destructive' });
+      redirect('/');
+    }
+
+    if (state.submitted && !state.error) {
+      toast({ title: 'Yahoo!', description: state.message });
+      redirect('/');
+    }
+  }, [state]);
   return (
     <>
       <section className='relative bg-orange pt-16 pb-10 lg:pt-40 lg:pb-6'>
@@ -37,18 +71,15 @@ function ProductDetail({ id, product, products }: ProductDetailProps) {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 }}
-                className={`text-base text-white leading-normal max-w-full lg:max-w-[45ch] text-center lg:text-left mb-6 ${poppinsRegular.className}`}>
+                className={`text-base text-white leading-relaxed max-w-full lg:max-w-[45ch] text-center lg:text-left mb-6 ${poppinsRegular.className}`}>
                 {product.short_description}
               </motion.p>
               <div className='flex justify-center lg:justify-start'>
-                <PopupButton
-                  id='cuVuC1Ci'
-                  hidden={{
-                    product_id: id,
-                  }}
+                <button
+                  onClick={handleOpenModal}
                   className={`bg-black rounded-full py-3 px-6 text-xl text-white text-center lg:text-left ${josefinSemiBold.className}`}>
                   Inquire Price
-                </PopupButton>
+                </button>
               </div>
             </div>
             <div className='col-span-2 lg:col-span-1 order-1 lg:order-2'>
@@ -92,6 +123,89 @@ function ProductDetail({ id, product, products }: ProductDetailProps) {
           </div>
         </section>
       )}
+      <Dialog open={modalOpen} onOpenChange={() => setModalOpen(false)}>
+        <DialogContent>
+          <div className='grid gap-4 py-4 mt-4'>
+            <p className={`${josefinRegular.className} text-black`}>
+              Once you&apos;ve submitted, we will get back to you with offers from Suppliers.
+            </p>
+            <form action={action} className='grid grid-cols-4 gap-4'>
+              <div className='col-span-4'>
+                <div className='flex flex-col gap-2'>
+                  <Label htmlFor='name'>
+                    Full Name <span className='text-red-600'>*</span>
+                  </Label>
+                  <Input type='text' name='name' id='name' required />
+                </div>
+              </div>
+              <div className='col-span-4'>
+                <div className='flex flex-col gap-2'>
+                  <Label htmlFor='email'>
+                    Email <span className='text-red-600'>*</span>
+                  </Label>
+                  <Input type='email' name='email' id='email' required />
+                </div>
+              </div>
+              <div className='col-span-4'>
+                <div className='flex flex-col gap-2'>
+                  <Label htmlFor='phone_number'>
+                    Phone Number <span className='text-red-600'>*</span>
+                  </Label>
+                  <Input type='text' name='phone_number' id='phone_number' required />
+                </div>
+              </div>
+              <div className='col-span-4 lg:col-span-2'>
+                <div className='flex flex-col gap-2'>
+                  <Label htmlFor='country'>Delivery Country</Label>
+                  <Input type='text' name='country' id='country' />
+                </div>
+              </div>
+              <div className='col-span-4 lg:col-span-2'>
+                <div className='flex flex-col gap-2'>
+                  <Label htmlFor='company_name'>Company name</Label>
+                  <Input type='text' name='company_name' id='company_name' />
+                </div>
+              </div>
+              <div className='col-span-4 lg:col-span-2'>
+                <div className='flex flex-col gap-2'>
+                  <Label htmlFor='quantity'>Quantity Required</Label>
+                  <Input type='text' name='quantity' id='quantity' />
+                </div>
+              </div>
+              <div className='col-span-4 lg:col-span-2'>
+                <div className='flex flex-col gap-2'>
+                  <Label htmlFor='delivery_date'>Desired Delivery Date</Label>
+                  <Input type='date' name='delivery_date' id='delivery_date' />
+                </div>
+              </div>
+              <div className='col-span-4'>
+                <div className='flex flex-col gap-2'>
+                  <Label htmlFor='target_price'>Target Price</Label>
+                  <Input type='text' name='target_price' id='target_price' />
+                </div>
+              </div>
+              <div className='col-span-4'>
+                <div className='flex flex-col gap-2'>
+                  <Label htmlFor='info'>Additional Information</Label>
+                  <Textarea rows={2} name='info' id='info' />
+                </div>
+              </div>
+              <div className='col-span-4'>
+                <div className='flex flex-col gap-2'>
+                  <Label htmlFor='request'>Special Request</Label>
+                  <Textarea rows={2} name='request' id='request' />
+                </div>
+              </div>
+              <button
+                type='submit'
+                disabled={pending}
+                className={`col-span-4 block w-full md:w-fit bg-black border-2 border-black rounded-full py-3 px-6 min-w-[180px] text-base lg:text-lg  text-white transition-all text-center mt-2 hover:bg-muted-orange hover:border-muted-orange ${josefinSemiBold.className}`}>
+                {pending ? 'Submitting...' : 'Submit'}
+              </button>
+            </form>
+          </div>
+        </DialogContent>
+      </Dialog>
     </>
   );
 }

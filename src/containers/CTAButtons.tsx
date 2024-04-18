@@ -51,12 +51,12 @@ function CTAButtons({ className }: CTAButtonsProps) {
         viewport={{ once: true, amount: 0.5 }}
         className={clsx('flex flex-wrap gap-4', className)}>
         <button
-          className={`w-full md:w-fit bg-black border-2 border-black rounded-full py-3 px-6 lg:py-4 lg:px-8  text-base lg:text-lg  text-white transition-all text-center ${josefinSemiBold.className}`}
+          className={`w-full md:w-fit bg-black border-2 border-black rounded-full py-3 px-6 lg:py-4 lg:px-8  text-lg lg:text-2xl  text-white transition-all text-center ${josefinSemiBold.className}`}
           onClick={handleOpenModal(true)}>
           Become a Buyer
         </button>
         <button
-          className={`w-full md:w-fit bg-transparent border-2 border-black rounded-full py-3 px-6 lg:py-4 lg:px-8  text-base lg:text-lg text-black hover:bg-black hover:text-white transition-all text-center ${josefinSemiBold.className}`}
+          className={`w-full md:w-fit bg-transparent border-2 border-black rounded-full py-3 px-6 lg:py-4 lg:px-8  text-lg lg:text-2xl text-black hover:bg-black hover:text-white transition-all text-center ${josefinSemiBold.className}`}
           onClick={handleOpenModal(false)}>
           Become a Supplier
         </button>

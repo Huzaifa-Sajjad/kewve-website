@@ -23,7 +23,7 @@ function SimplifySourcing() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: 0.1 }}
-            className={`text-lg lg:text-xl text-black leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${josefinRegular.className}`}>
+            className={`text-lg lg:text-2xl text-black leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${josefinRegular.className}`}>
             Delve into the heart of African culinary heritage with our platform, offering unparalleled access to an
             extensive selection of authentic food products sourced directly from the continent.
           </motion.p>
@@ -42,11 +42,11 @@ function SimplifySourcing() {
                 height={48}
                 className='mb-4 mx-auto lg:mx-0'
               />
-              <h3 className={`text-xl lg:text-2xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
+              <h3 className={`text-xl lg:text-3xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
                 Effortless Procurement
               </h3>
               <p
-                className={`text-base lg:text-lg text-black max-w-full lg:max-w-[45ch] leading-relaxed ${poppinsRegular.className}`}>
+                className={`text-base lg:text-xl text-black max-w-full lg:max-w-[45ch] leading-relaxed ${poppinsRegular.className}`}>
                 Save time with KEWVE, sourcing from trusted African brands for efficient procurement, ensuring a
                 seamless experience.
               </p>
@@ -64,11 +64,11 @@ function SimplifySourcing() {
                 height={48}
                 className='mb-5 mx-auto lg:mx-0'
               />
-              <h3 className={`text-xl lg:text-2xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
+              <h3 className={`text-xl lg:text-3xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
                 Effortless Sourcing
               </h3>
               <p
-                className={`text-base lg:text-lg text-black max-w-full lg:max-w-[45ch] leading-relaxed ${poppinsRegular.className}`}>
+                className={`text-base lg:text-xl text-black max-w-full lg:max-w-[45ch] leading-relaxed ${poppinsRegular.className}`}>
                 Efficiently streamline sourcing for UK and European food retailers, ensuring convenience and seamless
                 procurement experience for all involved.
               </p>
@@ -86,11 +86,11 @@ function SimplifySourcing() {
                 height={48}
                 className='mb-1 mx-auto lg:mx-0'
               />
-              <h3 className={`text-xl lg:text-2xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
+              <h3 className={`text-xl lg:text-3xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
                 Seamless Access
               </h3>
               <p
-                className={`text-base lg:text-lg text-black max-w-full lg:max-w-[45ch] leading-relaxed ${poppinsRegular.className}`}>
+                className={`text-base lg:text-xl text-black max-w-full lg:max-w-[45ch] leading-relaxed ${poppinsRegular.className}`}>
                 Connect effortlessly with trusted African food brands, saving time and effort in the search for reliable
                 suppliers.
               </p>
@@ -113,7 +113,7 @@ function SimplifySourcing() {
               />
               <motion.img
                 initial={{ translateX: 0, rotate: 0, opacity: 0 }}
-                whileInView={{ translateX: '56px', rotate: '12deg', opacity: 1 }}
+                whileInView={{ translateX: '24px', rotate: '6deg', opacity: 1 }}
                 viewport={{ once: true, amount: 0.8 }}
                 src='/images/products/drink.jpg'
                 alt='Drink'
@@ -123,7 +123,7 @@ function SimplifySourcing() {
               />
               <motion.img
                 initial={{ translateX: 0, rotate: 0, opacity: 0 }}
-                whileInView={{ translateX: '-56px', rotate: '-12deg', opacity: 1 }}
+                whileInView={{ translateX: '-24px', rotate: '-6deg', opacity: 1 }}
                 viewport={{ once: true, amount: 0.8 }}
                 src='/images/products/sauce.jpg'
                 alt='Sauce'

@@ -22,11 +22,11 @@ function IncreaseSales() {
               height={48}
               className='mb-4 mx-auto lg:mx-0'
             />
-            <h3 className={`text-xl lg:text-2xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
+            <h3 className={`text-2xl lg:text-3xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
               Sales Growth
             </h3>
             <p
-              className={`text-base lg:text-lg text-black max-w-full lg:max-w-[55ch] leading-relaxed ${poppinsRegular.className}`}>
+              className={`text-lg lg:text-xl text-black max-w-full lg:max-w-[55ch] leading-relaxed ${poppinsRegular.className}`}>
               Explore a lucrative market expansion strategy with KEWVE&apos;s unique African product integration,
               connecting African suppliers to global buyers for increased sales and market reach.
             </p>
@@ -43,11 +43,11 @@ function IncreaseSales() {
               height={48}
               className='mb-4 mx-auto lg:mx-0'
             />
-            <h3 className={`text-xl lg:text-2xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
+            <h3 className={`text-2xl lg:text-3xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
               Global Fusion
             </h3>
             <p
-              className={`text-base lg:text-lg text-black max-w-full lg:max-w-[55ch] leading-relaxed ${poppinsRegular.className}`}>
+              className={`text-lg lg:text-xl text-black max-w-full lg:max-w-[55ch] leading-relaxed ${poppinsRegular.className}`}>
               Access exclusive African food products offerings, market insights, supplier connections, and streamlined
               procurement to broaden your global food category.
             </p>
@@ -68,7 +68,7 @@ function IncreaseSales() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ delay: 0.2 }}
-                className={`text-lg lg:text-xl text-black leading-normal max-w-full lg:max-w-[50ch]  text-center lg:text-left ${josefinRegular.className}`}>
+                className={`text-xl lg:text-2xl text-black leading-normal max-w-full lg:max-w-[50ch]  text-center lg:text-left ${josefinRegular.className}`}>
                 Integrating distinctive African products to your world food category.
               </motion.p>
             </div>
