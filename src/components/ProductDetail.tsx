@@ -124,7 +124,7 @@ function ProductDetail({ id, product, products }: ProductDetailProps) {
         </section>
       )}
       <Dialog open={modalOpen} onOpenChange={() => setModalOpen(false)}>
-        <DialogContent>
+        <DialogContent className='max-h-[750px] overflow-y-scroll'>
           <div className='grid gap-4 py-4 mt-4'>
             <p className={`${josefinRegular.className} text-black`}>
               Once you&apos;ve submitted, we will get back to you with offers from Suppliers.

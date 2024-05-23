@@ -24,6 +24,8 @@ export default async function Products({ searchParams }: any) {
     'Kitchen Essentials',
   ];
 
+  const productPageContent = await client.getByType('products_page', { fetchOptions: { next: { revalidate: 10 } } });
+
   const products = await client.getAllByType('product', {
     fetchOptions: {
       next: { revalidate: 60 },
@@ -64,13 +66,12 @@ export default async function Products({ searchParams }: any) {
       <section className='landing-hero relative flex flex-col items-center py-16 lg:pt-24 overflow-x-hidden'>
         <div className='container spacing mx-auto lg:mt-16'>
           <h1
-            className={`text-3xl md:text-4xl xl:text-6xl font-bold text-white text-center mb-4 ${titleFont.className}`}>
-            Discover Authentic <br /> African Flavours
+            className={`text-3xl md:text-4xl xl:text-6xl font-bold text-white text-center mb-4 max-w-full md:max-w-[15ch] md:mx-auto ${titleFont.className}`}>
+            {productPageContent.results[0].data.title}
           </h1>
           <p
             className={`text-xl lg:text-2xl text-white leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${josefinRegular.className}`}>
-            Delve into the heart of African culinary heritage with our platform, offering unparalleled access to an
-            extensive selection of authentic food products sourced directly from the continent.
+            {productPageContent.results[0].data.description}
           </p>
         </div>
       </section>

@@ -16,9 +16,11 @@ import { buyerInterestedForm } from '@/actions';
 
 interface CTAButtonsProps {
   className?: string;
+  buyerText?: string;
+  supplierText?: string;
 }
 
-function CTAButtons({ className }: CTAButtonsProps) {
+function CTAButtons({ className, buyerText = 'Become a buyer', supplierText = 'Become a supplier' }: CTAButtonsProps) {
   const [modalOpen, setModalOpen] = useState(false);
   const [isBuyer, setIsBuyer] = useState(false);
 
@@ -51,14 +53,14 @@ function CTAButtons({ className }: CTAButtonsProps) {
         viewport={{ once: true, amount: 0.5 }}
         className={clsx('flex flex-wrap gap-4', className)}>
         <button
-          className={`w-full md:w-fit bg-black border-2 border-black rounded-full py-3 px-6 lg:py-4 lg:px-8  text-lg lg:text-2xl  text-white transition-all text-center ${josefinSemiBold.className}`}
+          className={`w-full md:w-fit bg-black border-2 border-black rounded-full py-3 px-6 lg:py-4 lg:px-8  text-lg lg:text-2xl  text-white transition-all text-center capitalize ${josefinSemiBold.className}`}
           onClick={handleOpenModal(true)}>
-          Become a Buyer
+          {buyerText}
         </button>
         <button
-          className={`w-full md:w-fit bg-transparent border-2 border-black rounded-full py-3 px-6 lg:py-4 lg:px-8  text-lg lg:text-2xl text-black hover:bg-black hover:text-white transition-all text-center ${josefinSemiBold.className}`}
+          className={`w-full md:w-fit bg-transparent border-2 border-black rounded-full py-3 px-6 lg:py-4 lg:px-8  text-lg lg:text-2xl text-black hover:bg-black hover:text-white transition-all text-center capitalize ${josefinSemiBold.className}`}
           onClick={handleOpenModal(false)}>
-          Become a Supplier
+          {supplierText}
         </button>
       </motion.div>
       <Dialog open={modalOpen} onOpenChange={() => setModalOpen(false)}>

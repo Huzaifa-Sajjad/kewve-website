@@ -1,11 +1,12 @@
 'use client';
 
-import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { titleFont, josefinRegular, josefinSemiBold, poppinsRegular } from '@/utils';
 import CTAButtons from '@/containers/CTAButtons';
+import { PrismicNextImage } from '@prismicio/next';
+import { titleFont, josefinRegular, josefinSemiBold, poppinsRegular } from '@/utils';
+import type { HomePageDocumentData } from '../../../prismicio-types';
 
-function DiscoverFlavours() {
+function DiscoverFlavours({ content }: { content: HomePageDocumentData }) {
   return (
     <section className='bg-yellow py-10 lg:py-0 lg:pb-4 lg:-mt-8 xl:-mt-16'>
       <div className='spacing container xl:w-[80%] mx-auto'>
@@ -15,7 +16,7 @@ function DiscoverFlavours() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             className={`text-3xl md:text-4xl xl:text-6xl text-black font-bold text-center mb-4 ${titleFont.className}`}>
-            Love Africa! Taste Africa!
+            {content.second_section_title}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 50 }}
@@ -23,8 +24,7 @@ function DiscoverFlavours() {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: 0.1 }}
             className={`text-xl lg:text-2xl text-black leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${josefinRegular.className}`}>
-            Discover the vibrant tapestry of flavours woven throughout Africa with our extensive array of handpicked
-            African culinary delights.
+            {content.second_section_description}
           </motion.p>
         </div>
         <div className='grid grid-cols-4 gap-4 mb-8 lg:mb-16'>
@@ -33,7 +33,7 @@ function DiscoverFlavours() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
-              src='/images/products/1.jpg'
+              src={content.show_case_image_1.url || ''}
               alt='Spices from Africa'
               width={640}
               height={400}
@@ -45,7 +45,7 @@ function DiscoverFlavours() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              src='/images/products/2.png'
+              src={content.show_case_image_2.url || ''}
               alt='Snacks from Africa'
               width={640}
               height={400}
@@ -57,7 +57,7 @@ function DiscoverFlavours() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              src='/images/products/3.png'
+              src={content.show_case_image_3.url || ''}
               alt='Drinks from Africa'
               width={640}
               height={400}
@@ -69,7 +69,7 @@ function DiscoverFlavours() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
-              src='/images/products/4.png'
+              src={content.show_case_image_4.url || ''}
               alt='Sauces from Africa'
               width={640}
               height={400}
@@ -78,60 +78,30 @@ function DiscoverFlavours() {
           </div>
         </div>
         <div className='grid grid-cols-3 gap-4 lg:gap-8 xl:gap-10'>
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            className='col-span-4 lg:col-span-1 text-center'>
-            <Image
-              src='/images/direct_access.svg'
-              alt='Direct Access'
-              width={64}
-              height={64}
-              className='mb-4 mx-auto'
-            />
-            <h3 className={`text-xl lg:text-2xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
-              Direct Access
-            </h3>
-            <p className={`tex-lg lg:text-xl text-black leading-relaxed ${poppinsRegular.className}`}>
-              Say goodbye to middlemen and enjoy a diverse selection of African food.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            className='col-span-4 lg:col-span-1 text-center'>
-            <Image
-              src='/images/direct_sourcing.svg'
-              alt='Direct Sourcing'
-              width={64}
-              height={64}
-              className='mb-4 mx-auto'
-            />
-            <h3 className={`text-xl lg:text-2xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
-              Direct Sourcing
-            </h3>
-            <p className={`tex-lg lg:text-xl text-black leading-relaxed ${poppinsRegular.className}`}>
-              Bid farewell to unnecessary intermediaries, and embrace a direct connection with trusted suppliers.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            className='col-span-4 lg:col-span-1 text-center'>
-            <Image src='/images/easy_access.svg' alt='Easy Access' width={64} height={64} className='mb-4 mx-auto' />
-            <h3 className={`text-xl lg:text-2xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
-              Easy Access
-            </h3>
-            <p className={`tex-lg lg:text-xl text-black leading-relaxed ${poppinsRegular.className}`}>
-              We make sourcing African food and drink brands as easy as it should be.
-            </p>
-          </motion.div>
+          {content.second_section_points.map((point) => {
+            return (
+              <motion.div
+                key={point.heading}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                className='col-span-4 lg:col-span-1 text-center'>
+                <PrismicNextImage field={point.icon} height={64} width={64} className='mb-4 mx-auto' />
+                <h3 className={`text-xl lg:text-2xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
+                  {point.heading}
+                </h3>
+                <p className={`tex-lg lg:text-xl text-black leading-relaxed ${poppinsRegular.className}`}>
+                  {point.description}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
         <div className='flex justify-center mt-8'>
-          <CTAButtons />
+          <CTAButtons
+            buyerText={content.second_section_buyer_cta?.toString()}
+            supplierText={content.second_section_supplier_cta?.toString()}
+          />
         </div>
       </div>
     </section>

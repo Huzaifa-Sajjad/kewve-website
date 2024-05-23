@@ -12,8 +12,10 @@ import { formSubmissionAction } from '@/actions';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { titleFont, josefinRegular, josefinSemiBold } from '@/utils';
 import { redirect } from 'next/navigation';
+import { HomePageDocumentData } from '../../../prismicio-types';
+import { PrismicNextImage, PrismicNextLink } from '@prismicio/next';
 
-function ContactSection() {
+function ContactSection({ content }: { content: HomePageDocumentData }) {
   const { toast } = useToast();
   const { pending } = useFormStatus();
   const [state, action] = useFormState(formSubmissionAction, { message: '', error: false, submitted: false });
@@ -39,7 +41,7 @@ function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             className={`text-3xl md:text-4xl xl:text-6xl text-black font-bold text-center mb-4 ${titleFont.className}`}>
-            Connect with Us
+            {content.contact_us_heading}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 50 }}
@@ -47,60 +49,28 @@ function ContactSection() {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: 0.1 }}
             className={`text-xl lg:text-2xl text-black leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${josefinRegular.className}`}>
-            Reach out to us and unlock the gateway to seamless communication and unparalleled assistance. Our dedicated
-            team stands ready to address your queries, provide guidance, and foster meaningful connections.
+            {content.contact_us_description}
           </motion.p>
         </div>
         <div className='grid grid-cols-6 gap-4 max-w-full xl:max-w-[60%] mx-auto'>
           <div className='col-span-6 lg:col-span-2'>
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              className='mb-6 xl:mb-10 text-center lg:text-left'>
-              <a href='tel:+353873636781'>
-                <Image
-                  src='/images/phone.svg'
-                  alt='Save Time'
-                  width={36}
-                  height={36}
-                  className='mb-4 mx-auto lg:mx-0'
-                />
-                <span className={`text-xl text-black leading-tight ${josefinSemiBold.className}`}>+353 873 636781</span>
-              </a>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              className='mb-6 xl:mb-10 text-center lg:text-left'>
-              <a href=' https://www.instagram.com/its_kewve/' target='_blank'>
-                <Image
-                  src='/images/insta.svg'
-                  alt='Save Time'
-                  width={36}
-                  height={36}
-                  className='mb-4 mx-auto lg:mx-0'
-                />
-                <span className={`text-xl text-black leading-tight ${josefinSemiBold.className}`}>Instagram</span>
-              </a>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              className='text-center lg:text-left'>
-              <a href=' https://www.instagram.com/its_kewve/' target='_blank'>
-                <Image
-                  src='/images/linkedin.svg'
-                  alt='Save Time'
-                  width={36}
-                  height={36}
-                  className='mb-4 mx-auto lg:mx-0'
-                />
-                <span className={`text-xl text-black leading-tight ${josefinSemiBold.className}`}>Linkedin</span>
-              </a>
-            </motion.div>
+            {content.contact_us_points.map((point) => {
+              return (
+                <motion.div
+                  key={point.title}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  className='mb-6 xl:mb-10 text-center lg:text-left'>
+                  <PrismicNextLink field={point.url}>
+                    <PrismicNextImage field={point.icon} width={36} height={36} className='mb-4 mx-auto lg:mx-0' />
+                    <span className={`text-xl text-black leading-tight ${josefinSemiBold.className}`}>
+                      {point.title}
+                    </span>
+                  </PrismicNextLink>
+                </motion.div>
+              );
+            })}
           </div>
           <div className='col-span-6 lg:col-span-4 mt-6 lg:mt-0'>
             <form action={action} className='grid grid-cols-4 gap-4'>

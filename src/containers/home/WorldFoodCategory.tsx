@@ -1,11 +1,12 @@
 'use client';
 
-import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { poppinsRegular, josefinSemiBold, titleFont, josefinRegular } from '@/utils';
 import CTAButtons from '@/containers/CTAButtons';
+import { PrismicNextImage } from '@prismicio/next';
+import { poppinsRegular, josefinSemiBold, titleFont, josefinRegular } from '@/utils';
+import type { HomePageDocumentData } from '../../../prismicio-types';
 
-function WorldFoodCategory() {
+function WorldFoodCategory({ content }: { content: HomePageDocumentData }) {
   return (
     <section className='relative bg-muted-orange py-10 lg:pt-40'>
       <div className='grid grid-cols-2 items-center gap-4 lg:gap-x-20'>
@@ -16,8 +17,8 @@ function WorldFoodCategory() {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
-                className={`text-3xl md:text-4xl xl:text-6xl text-black font-bold text-center lg:text-left mb-6 ${titleFont.className}`}>
-                Build Your World <br /> Food Category
+                className={`text-3xl md:text-4xl xl:text-6xl text-black font-bold text-center lg:text-left mb-6 max-w-full md:max-w-[15ch] ${titleFont.className}`}>
+                {content.fourth_section_title}
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 50 }}
@@ -25,8 +26,7 @@ function WorldFoodCategory() {
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ delay: 0.2 }}
                 className={`text-xl lg:text-2xl text-black leading-normal max-w-full lg:max-w-[50ch]  text-center lg:text-left ${josefinRegular.className}`}>
-                Unlock new opportunities with KEWVE&apos;s comprehensive solutions, broadening your market reach and
-                enhancing your offerings.
+                {content.fourth_section_description}
               </motion.p>
             </div>
             <motion.div
@@ -34,56 +34,42 @@ function WorldFoodCategory() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               className='bg-yellow-dark w-[80%] lg:w-[60%] h-auto rounded-3xl p-6 mx-auto lg:mx-0 mb-8'>
-              <Image src='/images/products/4.png' alt='World Food' height={350} width={350} className='w-full h-full' />
+              <PrismicNextImage
+                field={content.fourth_section_image}
+                height={450}
+                width={450}
+                className='w-full h-full'
+              />
             </motion.div>
             <div className='flex justify-center lg:justify-start'>
-              <CTAButtons className='mt-2' />
+              <CTAButtons
+                buyerText={content.fourth_section_buyer_cta?.toString()}
+                supplierText={content.fourth_section_supplier_cta?.toString()}
+                className='mt-2'
+              />
             </div>
           </div>
         </div>
         <div className='col-span-2 lg:col-span-1 py-8 px-4 lg:p-20'>
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            className='mb-6 xl:mb-10 text-center lg:text-left'>
-            <Image
-              src='/images/global.svg'
-              alt='Global Expansion'
-              width={48}
-              height={48}
-              className='mb-4 mx-auto lg:mx-0'
-            />
-            <h3 className={`text-2xl lg:text-3xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
-              Global Expansion
-            </h3>
-            <p
-              className={`tex-lg lg:text-xl text-black max-w-full lg:max-w-[55ch] leading-relaxed ${poppinsRegular.className}`}>
-              Globalize your offerings with KEWVE, diversify your offerings and cater to the growing demand for unique
-              and authentic flavours.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            className='mb-6 xl:mb-10 text-center lg:text-left'>
-            <Image
-              src='/images/marketplace.svg'
-              alt='African Marketplace'
-              width={48}
-              height={48}
-              className='mb-4 mx-auto lg:mx-0'
-            />
-            <h3 className={`text-2xl lg:text-3xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
-              African Marketplace
-            </h3>
-            <p
-              className={`tex-lg lg:text-xl text-black max-w-full lg:max-w-[55ch] leading-relaxed ${poppinsRegular.className}`}>
-              Access exclusive African food products offerings, market insights, supplier connections, and streamlined
-              procurement to broaden your global food category.
-            </p>
-          </motion.div>
+          {content.fourth_section_points.map((point) => {
+            return (
+              <motion.div
+                key={point.heading}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                className='mb-6 xl:mb-10 text-center lg:text-left'>
+                <PrismicNextImage field={point.icon} width={48} height={48} className='mb-4 mx-auto lg:mx-0' />
+                <h3 className={`text-2xl lg:text-3xl text-black leading-tight mb-2 ${josefinSemiBold.className}`}>
+                  {point.heading}
+                </h3>
+                <p
+                  className={`tex-lg lg:text-xl text-black max-w-full lg:max-w-[55ch] leading-relaxed ${poppinsRegular.className}`}>
+                  {point.description}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

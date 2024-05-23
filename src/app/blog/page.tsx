@@ -9,6 +9,8 @@ import BlogCard from '@/components/BlogCard';
 export default async function Blogs() {
   const client = createClient();
 
+  const blogPageContent = await client.getByType('blogs_page', { fetchOptions: { next: { revalidate: 10 } } });
+
   const blogs = await client.getAllByType('blog_post', {
     fetchOptions: {
       next: { revalidate: 60 },
@@ -29,12 +31,11 @@ export default async function Blogs() {
         <div className='container spacing mx-auto'>
           <h1
             className={`text-3xl md:text-4xl xl:text-6xl font-bold text-white text-center mb-4 ${titleFont.className}`}>
-            African Connections
+            {blogPageContent.results[0].data.title}
           </h1>
           <p
             className={`text-lg lg:text-2xl text-white leading-normal max-w-full lg:max-w-[60ch] mx-auto text-center ${josefinRegular.className}`}>
-            Discover and connect with African food brands and suppliers effortlessly. Explore authentic ingredients and
-            products, fostering culinary partnerships and celebrating the richness of African cuisine.
+            {blogPageContent.results[0].data.description}
           </p>
         </div>
       </section>
